@@ -14,15 +14,13 @@ npm i -S stampit
 
 ```bash
 bower install stampit=https://npmcdn.com/stampit@4
-```
-
-or
-
-```bash
 bower install stampit=https://unpkg.com/stampit@4
+bower install stampit=https://cdn.jsdelivr.net/npm/stampit@4
 ```
 
 ### Direct script
+
+Use any of the links above. For example:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/stampit@4"></script>
@@ -46,7 +44,7 @@ npm i -S @stamp/it
 
 ### Compatibility note
 
-The `@stamp/it` is compatible with any EcmaScript 5 environment, including Node.js v0.10. However, some of the ecosystem modules are ES6 only.
+The `@stamp/it` is compatible with any EcmaScript 5 environment, including Node.js v0.10. However, some of the [Ecosystem](/ecosystem.md) modules are ES6 only.
 
 The release notes can be found on the [project page](https://github.com/stampit-org/stamp).
 
@@ -54,7 +52,7 @@ The release notes can be found on the [project page](https://github.com/stampit-
 
 Stampit have a lot of helper modules. You can always find the list of official NPM packages here: [https://www.npmjs.com/~stamp](https://www.npmjs.com/~stamp)
 
-See more information on the Ecosystem page.
+See more information on the [Ecosystem](/ecosystem.md) page.
 
 # Stampit and ES6
 

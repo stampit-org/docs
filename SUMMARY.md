@@ -3,6 +3,7 @@
 ## Essentials
 
 * [Installation](README.md)
+* [Ecosystem](ecosystem.md)
 
 ## Methods
 
