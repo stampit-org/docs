@@ -1,9 +1,10 @@
 # Summary
 
-## Overview
+## Essentials
 
-* [My Awesome API](README.md)
+* [Installation](README.md)
 
 ## Methods
 
 * [Defining Methods](methods.md)
+
