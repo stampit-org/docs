@@ -4,8 +4,13 @@
 
 * [Installation](README.md)
 
+## API
+
+* [Quick start](start.md)
+* [Basics](basics.md)
+* [Composition](composition.md)
+* [Methods](methods.md)
+
 ## Ecosystem
 
-* [Ecosystem](ecosystem.md)
-* [Defining Methods](methods.md)
-
+* [Overview](ecosystem.md)
