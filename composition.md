@@ -1,6 +1,6 @@
 # What is a Stamp?
 
-Stamp is a factory function.
+Stamp is a composable factory function.
 
 > _NOTE_
 >
@@ -59,7 +59,7 @@ function isStamp (object) {
 
 ## Composing stamps
 
-The main reason why stamps exist is the ability to compose stamps together.
+The main reason why stamps exist is the ability to freely compose stamps together.
 
 ```js
 const ComposedStamp = compose(Stamp1, Stamp2, Stamp3)
