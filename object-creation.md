@@ -1,6 +1,4 @@
-# Object creation
-
-## Internals of a stamp factory
+# Stamp internals
 
 This is a plain factory function. It creates and returns a plain object.
 
@@ -81,7 +79,7 @@ function Stamp () {
 }
 ```
 
-Last, but not least, the **initializers** are kind of constructors. With classic classes you would execute only one constructor when creating an object. With stamps you execute all the initializers of a stamp.
+Last, but not least, the **initializers** are kind of constructors. With classic classes you would execute only one constructor when creating an object. With stamps you **execute **_**all**_** the initializers** of a stamp.
 
 ```js
 function Stamp () {

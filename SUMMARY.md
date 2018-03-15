@@ -5,7 +5,7 @@
 * [Overview](overview.md)
 * [Installation](README.md)
 * [What is a Stamp](composition.md)
-* [Object creation](object-creation.md)
+* [Stamp internals](object-creation.md)
 * [Specification](specification.md)
 
 ## API

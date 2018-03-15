@@ -1,6 +1,6 @@
 # What is a Stamp?
 
-Stamp is a composable factory function.
+Stamp is a **composable** factory function.
 
 > _NOTE_
 >
@@ -40,11 +40,10 @@ interface Descriptor {
 
 You, the developer, is allowed and encouraged to operate that metadata manually if needed.
 
-For example, you can always check which properties an object instance will have:
+For example, you can always check which methods an object instance will have:
 
 ```js
-console.log('Object will have these properties:', Object.keys(Stamp.compose.properties))
-console.log('And these:', Object.keys(Stamp.compose.deepProperties))
+console.log('Object will have these methods:', Object.keys(Stamp.compose.methods))
 ```
 
 ## Ducktyping a stamp
@@ -98,7 +97,7 @@ const StampFromStampit = stampit(Stamp1, Stamp2, Stamp3)
 However, `stampit` adds few more handy APIs to your stamp:
 
 ```js
-const NewStamp1 = StampFromStampit.methods({ myMethod () {} }) // add a method metadata
+const NewStamp1 = StampFromStampit.methods({ myMethod () {} }) // add a method metadata using chaining API
 const NewStamp2 = stampit({ props: { myProperty: 'my value' } }) // using "props" metadata shortcut
 // etc
 ```
@@ -106,8 +105,8 @@ const NewStamp2 = stampit({ props: { myProperty: 'my value' } }) // using "props
 Whereas `compose` does not have the handy API:
 
 ```js
-StampFromCompose.methods === undefined // THERE IS NO .methods API
-compose({ props: { myProperty: 'my value' } }) // WRONG! YOU MUST USE FULL "properties" STRING
+StampFromCompose.methods === undefined // THERE IS NO .methods CHAINING API
+compose({ props: { myProperty: 'my value' } }) // WRONG! YOU MUST USE FULL `properties` KEY
 ```
 
 

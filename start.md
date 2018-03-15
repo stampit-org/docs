@@ -95,10 +95,10 @@ function uploadTo(req, res, next) {
 }
 ```
 
-or
+Or preconfigure it.
 
 ```js
-let CatGifStore = FileStore.setDefaultBucket('cat-gifs')
+const CatGifStore = FileStore.setDefaultBucket('cat-gifs')
 
 const catGifStore = CatGifStore() // create an instance of the store
 
@@ -134,7 +134,10 @@ const catGifStore = CatGifStore.create()
 Here is the same `FileStore` stamp but written in a more concise way.
 
 ```js
-const FileStore = require('./HasLog').compose(require('@stamp/privatize'), {
+const HasLog = require('./HasLog')
+const Privatize = require('@stamp/privatize')
+
+const FileStore = HasLog.compose(Privatize, {
   conf: {
     bucket: process.env.UPLOAD_BUCKET
   },
@@ -157,6 +160,18 @@ const FileStore = require('./HasLog').compose(require('@stamp/privatize'), {
       this.log.info({ fileName }, 'Uploading file')
       return this.s3instance.upload({ Key: fileName, Body: stream }).promise()
     }
+  }
+})
+```
+
+# Mocking I/O in unit tests
+
+Replacing actual `S3` with a fake one.
+
+```js
+const MockedFileStore = FileStore.props({
+  S3() {
+    return { upload: () => ({ promise: () => Promise.resolve() }) }
   }
 })
 ```

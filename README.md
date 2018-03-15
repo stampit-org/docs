@@ -26,7 +26,9 @@ Use any of the links above. For example:
 <script src="https://cdn.jsdelivr.net/npm/stampit@4"></script>
 ```
 
-The above will automatically install stampit to  `window.stampit`. In a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) or [ServiceWorker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) stampit would install itself to `self.stampit`.
+The above will automatically install stampit to  `window.stampit`.
+
+In a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) or [ServiceWorker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) stampit would install itself to `self.stampit`.
 
 ### Compatibility note
 
