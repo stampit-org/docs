@@ -2,6 +2,7 @@
 
 ## Essentials
 
+* [Overview](overview.md)
 * [Installation](README.md)
 * [What is a Stamp](composition.md)
 * [Object creation](object-creation.md)
@@ -15,5 +16,5 @@
 
 ## Ecosystem
 
-* [Overview](ecosystem.md)
+* [Ecosystem Overview](ecosystem.md)
 

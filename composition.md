@@ -103,7 +103,7 @@ const NewStamp2 = stampit({ props: { myProperty: 'my value' } }) // using "props
 Whereas `compose` does not have the handy API:
 
 ```js
-StampFromCompose.methods === undefined // there is no .methods API
+StampFromCompose.methods === undefined // THERE IS NO .methods API
 compose({ props: { myProperty: 'my value' } }) // WRONG! YOU MUST USE FULL "properties" STRING
 ```
 
