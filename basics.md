@@ -1,8 +1,10 @@
 # Basics
 
-Stampit gives you several ways to compose your objects.
+## Creating Stamps
 
-## Pass plain descriptor
+Stampit gives you several ways to create your objects.
+
+### Pass plain descriptor
 
 You can pass standard [stamp descriptor](/composition.md) to stampit.
 
@@ -24,7 +26,7 @@ const descriptor = {
 const MyStamp = stampit(descriptor)
 ```
 
-Or you can pass sampit-flavoured descriptor \(short version of the standard descriptor\).
+Or you can pass _sampit-flavoured_ descriptor \(short version of the standard descriptor\).
 
 ```js
 const shorterDescriptor = {
@@ -44,12 +46,12 @@ const shorterDescriptor = {
 const MyStamp = stampit(shorterDescriptor)
 ```
 
-## Shortcut functions
+### Shortcut functions
 
 Stampit has shortcut functions attached to it. For example:
 
 ```js
-const { props, methods, init } = require('@stamp/it')
+const { props, methods, init } = stampit
 ```
 
 You can create stamps from them too.
@@ -94,12 +96,12 @@ const {
   deepConfiguration,
 
   composers
-} = require('@stamp/it')
+} = stampit
 ```
 
-## Creating same stamp in few ways
+### Creating same stamp in few ways
 
-All the examples above create _exactly the same stamp_.
+All the examples below create _exactly the same stamp_.
 
 #### Classic way
 
@@ -126,15 +128,15 @@ const HasLog = stampit({
 #### Shortcut way
 
 ```js
-const { props } = stampit
-
-const HasLog = props({
+const HasLog = stampit.props({
   log: logger
 })
 
 // OR
 
-const HasLog = stampit.props({
+const { props } = stampit
+
+const HasLog = props({
   log: logger
 })
 ```
@@ -147,9 +149,7 @@ const HasLog = stampit().props({
 })
 ```
 
-## Chaining
+### Chaining
 
-You can chain 
-
-
+You can chain
 
