@@ -39,7 +39,7 @@ function Stamp () {
 }
 ```
 
-There is also **methods** object which becomes the new object prototype.
+There is also **methods** object which becomes the new object's prototype.
 
 ```js
 function Stamp () {
@@ -59,7 +59,7 @@ function Stamp () {
 }
 ```
 
-The **propertyDescriptors** is an object applied to the resulting object using [`Object.defineProperties`](https://mdn.io/defineProperties) JavaScript function.
+The **propertyDescriptors** metadata is an object applied to the resulting object using [`Object.defineProperties`](https://mdn.io/defineProperties) JavaScript standard function.
 
 ```js
 function Stamp () {
@@ -97,7 +97,7 @@ function Stamp () {
 
   Object.defineProperties(newObject, metadata.propertyDescriptors)
 
-  for (const init of metadata.initializers || []) {
+  for (const init of metadata.initializers || []) { // run every initializer one by one
     const firstArg = argument[0]
     const secondArg = { args: [...arguments], instance: newObject, stamp: Stamp }
     const returnedValue = init.call(newObject, firstArg, secondArg)
@@ -116,7 +116,7 @@ See [Stamp Specification](/specification.md) for more details.
 
 > _NOTE_
 >
-> The code above is not the actual code. It was optimized for readability purposes.
+> The code above is not the actual stampit code. It was optimized for readability purposes.
 
 
 

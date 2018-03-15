@@ -2,7 +2,7 @@
 
 ## Browser usage
 
-For browsers it is recommended to use the [`stampit`](https://github.com/stampit-org/stampit) module. It is a small \(v4.1 is **1.3KB** gzipped\) and browser optimized. Also, it will work in other JavaScript environments and ES5-compatible engines.
+For browsers it is recommended to use the [`stampit`](https://github.com/stampit-org/stampit) module. It's a small \(**1.3KB** gzipped\) and browser optimized. Also, it will work in other JavaScript environments and ES5-compatible engines.
 
 ### NPM
 
@@ -26,7 +26,7 @@ Use any of the links above. For example:
 <script src="https://cdn.jsdelivr.net/npm/stampit@4"></script>
 ```
 
-The above will automatically install stampit to  `window.stampit`. In a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) or [ServiceWorker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) it would install itself to `self.stampit`.
+The above will automatically install stampit to  `window.stampit`. In a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) or [ServiceWorker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) stampit would install itself to `self.stampit`.
 
 ### Compatibility note
 
@@ -36,7 +36,7 @@ The detailed Release Notes are always available at the [GitHub Releases](https:/
 
 ## Node.js usage
 
-For node.js it is recommended to use the [`@stamp/it`](https://github.com/stampit-org/stamp/tree/master/packages/it) module. Its source code is more readable than `stampit` module, so you can easily debug its internals if needed. In addition, it will work in other JavaScript environments and ES5-compatible engines.
+For node.js it is recommended to use the [`@stamp/it`](https://github.com/stampit-org/stamp/tree/master/packages/it) module. Its source code is more readable than `stampit` module, so you can easily debug its internals if needed. In addition, it will work in any other ES5-compatible JavaScript environments.
 
 ```bash
 npm i -S @stamp/it

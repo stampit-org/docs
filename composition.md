@@ -1,10 +1,12 @@
 # What is a Stamp?
 
-Stamp is a factory function
+Stamp is a factory function.
 
 > _NOTE_
 >
 > Factory functions create and return new objects.
+
+Go to [API Quick start](/start.md) to learn how to create a Stamp.
 
 ```js
 const object = Stamp() // creating a new object from a stamp
@@ -86,7 +88,7 @@ To create a new stamp from scratch you would need to use one of the JavaScript m
 * [`@stamp/it`](https://www.npmjs.com/package/@stamp/it) - the same as the compose function above, but provides some additional nicer API
 * [`stampit`](https://www.npmjs.com/package/stampit) - the same as the `@stamp/it` above, but optimized for browsers
 
-You can use both `stampit`s same as the `compose` function. But you cannot use `compose` function same as `stampit`. For example, these lines generate same stamp:
+You can use both `stampit`s same way as if it was the `compose` function. But you cannot use `compose` function same way as `stampit`. For example, these lines generate same stamp:
 
 ```js
 const StampFromCompose = compose(Stamp1, Stamp2, Stamp3)
@@ -98,6 +100,7 @@ However, `stampit` adds few more handy APIs to your stamp:
 ```js
 const NewStamp1 = StampFromStampit.methods({ myMethod () {} }) // add a method metadata
 const NewStamp2 = stampit({ props: { myProperty: 'my value' } }) // using "props" metadata shortcut
+// etc
 ```
 
 Whereas `compose` does not have the handy API:
