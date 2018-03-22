@@ -151,5 +151,29 @@ const HasLog = stampit().props({
 
 ### Chaining
 
-You can chain
+You can chain all the shortcut functions.
+
+```js
+const InstanceCounter = stampit()
+.props({ 
+  instanceCounter: { count: 0 }
+})
+.methods({ 
+  printFoo() { console.log('I am instance number', this.instanceNumber) } 
+})
+.init(function ({ foo }) {
+  this.instanceIndex = this.instanceCounter.count
+  this.instanceCounter.count += 1
+})
+.propertyDescriptors({ 
+  name: { value: 'Foo' }
+})
+.statics({ 
+  printStamp() { console.log(this.compose) } 
+})
+.deepStatics({
+  deep: { object: 
+```
+
+
 
