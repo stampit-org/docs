@@ -151,29 +151,34 @@ const HasLog = stampit().props({
 
 ### Chaining
 
-You can chain all the shortcut functions.
+You can chain all the shortcut functions \(see list above\)
 
 ```js
 const InstanceCounter = stampit()
-.props({ 
-  instanceCounter: { count: 0 }
+.conf({
+  instanceCounter: 0 // number of instances of a particular stamp
 })
-.methods({ 
-  printFoo() { console.log('I am instance number', this.instanceNumber) } 
+.props({
+  instanceIndex: -1 // an instance number, incremental
 })
-.init(function ({ foo }) {
-  this.instanceIndex = this.instanceCounter.count
-  this.instanceCounter.count += 1
+.methods({
+  printInstanceIndex() { console.log('I am instance #', this.instanceIndex) } 
 })
-.propertyDescriptors({ 
-  name: { value: 'Foo' }
+.init(function ({ foo }, { stamp }) {
+  this.instanceIndex = stamp.compose.configuration.instanceCounter // assign instance number
+  stamp.compose.configuration.instanceCounter += 1 // increment the counter
+})
+.staticPropertyDescriptors({ 
+  name: { value: 'InstanceCounter' }
 })
 .statics({ 
-  printStamp() { console.log(this.compose) } 
+  printTotalInstanceCount() { console.log(this.compose.configuration.instanceCounter) } 
 })
-.deepStatics({
-  deep: { object: 
+.composers(function ({ stamp }) {
+  // We need to reset the counter each time the InstanceCounter is composed with.
+  stamp.compose.configuration.instanceCounter = 0
+})
 ```
 
-
+The stamp above is a utility stamp. If you compose it to any of your stamps it will _count the number of object instances_ created from your stamp.
 
