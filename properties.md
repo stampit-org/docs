@@ -9,8 +9,8 @@ const HasLog = stampit({
   }
 })
 
-const logger = HasLog()
-logger.log.debug('I can log')
+const loggerObject = HasLog()
+loggerObject.log.debug('I can log')
 ```
 
 If you compose the stamp above with any other stamp, then object instances created from it will have the `.log` property.
@@ -22,7 +22,7 @@ const RequestHandler = stampit().methods({
     res.sendStatus(200)
   }
 })
-.compose(HasLog)
+.compose(HasLog) // composing with HasLog
 
 const handler = RequestHandler()
 handler.log.debug('Created a handler')
