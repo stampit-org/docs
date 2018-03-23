@@ -13,7 +13,6 @@
 * [Quick start](start.md)
 * [Basics](basics.md)
 * [Properties](properties.md)
-* [Methods](methods.md)
 
 ## Ecosystem
 

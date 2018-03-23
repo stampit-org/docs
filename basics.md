@@ -26,7 +26,7 @@ const descriptor = {
 const MyStamp = stampit(descriptor)
 ```
 
-Or you can pass _sampit-flavoured_ descriptor \(short version of the standard descriptor\).
+Or you can pass _sampit-flavoured_ descriptor \(shorter version of the standard descriptor\).
 
 ```js
 const shorterDescriptor = {
@@ -48,7 +48,7 @@ const MyStamp = stampit(shorterDescriptor)
 
 ### Shortcut functions
 
-Stampit has shortcut functions attached to it. For example:
+Stampit has 18 shortcut functions attached to it. For example:
 
 ```js
 const { props, methods, init } = stampit
@@ -151,7 +151,7 @@ const HasLog = stampit().props({
 
 ### Chaining
 
-You can chain all the shortcut functions \(see list above\)
+You can chain all the shortcut functions \(see list above\).
 
 ```js
 const InstanceCounter = stampit()

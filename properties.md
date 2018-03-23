@@ -1,6 +1,6 @@
 # Properties
 
-You can add properties to your objects.
+You can add properties to the objects created from your stamps.
 
 ```js
 const HasLog = stampit({
@@ -13,7 +13,7 @@ const loggerObject = HasLog()
 loggerObject.log.debug('I can log')
 ```
 
-If you compose the stamp above with any other stamp, then object instances created from it will have the `.log` property.
+If you compose the stamp above with any other stamp, then object instances created from it will also have the `.log` property.
 
 ```js
 const RequestHandler = stampit().methods({
@@ -26,6 +26,36 @@ const RequestHandler = stampit().methods({
 
 const handler = RequestHandler()
 handler.log.debug('Created a handler')
+```
+
+The properties are copied **by assignment**. In other words - **by reference **using `Object.assign`.
+
+```js
+HasLog().log === RequestHandler().log
+```
+
+In case of conflicts the last composed property wins.
+
+```js
+const MyValue = stampit.props({
+  props: {
+    myValue: 1
+  }
+})
+.compose({
+  props: {
+    myValue: 2
+  }
+})
+.compose({
+  props: { 
+    myValue: 3
+  }
+})
+
+MyValue.compose.properties.myValue === 3
+
+MyValue().myValue === 3
 ```
 
 ## Other ways to add properties
@@ -60,48 +90,6 @@ const HasLog = stampit().props({
 const HasLog = stampit().properties({
   log: require('bunyan').createLogger({ name: 'my logger' })
 })
-```
-
-## Mechanics
-
-In case of conflicts the last composed property wins.
-
-```js
-const MyValue = stampit({
-  props: {
-    myValue: 1
-  }
-})
-.compose({
-  props: {
-    myValue: 2
-  }
-})
-.compose(stampit.props({ 
-  myValue: 3
-}))
-
-MyValue.compose.properties.myValue === 3
-
-MyValue().myValue === 3
-```
-
-All the properties are **copied by reference** using `Object.assign`.
-
-```js
-const originalObject = { myValue: 0 }
-
-const MyObject = stampit().props({
-  myObject: originalObject
-})
-
-MyObject.compose.properties.myObject.myValue === 0
-
-const obj = MyObject()
-obj.myObject.myValue = 622 // changing the originalObject
-
-MyObject.compose.properties.myObject.myValue === 622 // we have changed the originalObject
-originalObject.myValue === 622 // we have changed the originalObject
 ```
 
 
