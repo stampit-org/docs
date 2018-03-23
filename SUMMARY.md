@@ -3,8 +3,8 @@
 ## Essentials
 
 * [Overview](README.md)
-* [Installation](overview.md)
 * [What is a Stamp](composition.md)
+* [Installation](installation.md)
 * [Stamp internals](object-creation.md)
 * [Specification](specification.md)
 
@@ -13,8 +13,13 @@
 * [Quick start](start.md)
 * [Basics](basics.md)
 * [Properties](properties.md)
+* [Methods](methods.md)
+* [Initializers](initializers.md)
+* [Static properties](static-properties.md)
 
 ## Ecosystem
 
 * [Ecosystem Overview](ecosystem.md)
+* [@stamp/collision](stampcollision.md)
+* [@stamp/required](stamprequired.md)
 

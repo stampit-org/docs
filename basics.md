@@ -4,6 +4,10 @@
 
 Stampit gives you several ways to create your objects.
 
+> _**NOTE!**_
+>
+> Any time you compose - you create a **NEW** stamp. Every function below always returns a **NEW** stamp.
+
 ### Pass plain descriptor
 
 You can pass standard [stamp descriptor](/composition.md) to stampit.
@@ -106,7 +110,7 @@ All the examples below create _exactly the same stamp_.
 #### Classic way
 
 ```js
-const logger = require('bunyan').createLogger({name: 'log'})
+const logger = require('bunyan').createLogger({ name: 'log' })
 
 const HasLog = stampit({
   properties: {

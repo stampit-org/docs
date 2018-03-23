@@ -16,13 +16,13 @@ loggerObject.log.debug('I can log')
 If you compose the stamp above with any other stamp, then object instances created from it will also have the `.log` property.
 
 ```js
-const RequestHandler = stampit().methods({
+const RequestHandler = stampit(HasLog) // composing with HasLog
+.methods({
   handle(req, res, next) {
     this.log.info({ originalUrl: req.originalUrl }, 'handling request') // using the .log
     res.sendStatus(200)
   }
 })
-.compose(HasLog) // composing with HasLog
 
 const handler = RequestHandler()
 handler.log.debug('Created a handler')
@@ -35,28 +35,6 @@ HasLog().log === RequestHandler().log
 ```
 
 In case of conflicts the last composed property wins.
-
-```js
-const MyValue = stampit.props({
-  props: {
-    myValue: 1
-  }
-})
-.compose({
-  props: {
-    myValue: 2
-  }
-})
-.compose({
-  props: { 
-    myValue: 3
-  }
-})
-
-MyValue.compose.properties.myValue === 3
-
-MyValue().myValue === 3
-```
 
 ## Other ways to add properties
 
