@@ -180,5 +180,7 @@ const MockedFileStore = FileStore.props({
 })
 ```
 
+# Basic API
 
+Head to the [Basics](/basics.md) page.
 
