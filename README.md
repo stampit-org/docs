@@ -1,6 +1,6 @@
 # What is stampit
 
-`stampit` is a JavaScript module which implements the [stamp specification](https://www.gitbook.com/book/stampit-org/docs/edit#). Stamps are composable factory function.
+`stampit` is a JavaScript module which implements the [stamp specification](https://www.gitbook.com/book/stampit-org/docs/edit#). Stamps are composable factory functions.
 
 Think of stamps as classic classes but without any limits, boundaries, or rules.
 
