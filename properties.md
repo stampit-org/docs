@@ -1,6 +1,6 @@
 # Properties
 
-You can add properties to the objects created from your stamps.
+You can add properties to the objects created from your stamps. These are default properties of your objects.
 
 ```js
 const HasLog = stampit({
@@ -41,32 +41,34 @@ In case of conflicts the last composed property wins.
 Exactly the same stamp can be created in few other ways. Here they all are.
 
 ```js
+const myLogger = require('bunyan').createLogger({ name: 'my logger' })
+
 const HasLog = stampit({
   props: {
-    log: require('bunyan').createLogger({ name: 'my logger' })
+    log: myLogger
   }
 })
 
 const HasLog = stampit({
   properties: {
-    log: require('bunyan').createLogger({ name: 'my logger' })
+    log: myLogger
   }
 })
 
 const HasLog = stampit.props({
-  log: require('bunyan').createLogger({ name: 'my logger' })
+  log: myLogger
 })
 
 const HasLog = stampit.properties({
-  log: require('bunyan').createLogger({ name: 'my logger' })
+  log: myLogger
 })
 
 const HasLog = stampit().props({
-  log: require('bunyan').createLogger({ name: 'my logger' })
+  log: myLogger
 })
 
 const HasLog = stampit().properties({
-  log: require('bunyan').createLogger({ name: 'my logger' })
+  log: myLogger
 })
 ```
 

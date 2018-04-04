@@ -166,17 +166,21 @@ const InstanceCounter = stampit()
   instanceIndex: -1 // an instance number, incremental
 })
 .methods({
-  printInstanceIndex() { console.log('I am instance #', this.instanceIndex) } 
+  printInstanceIndex() {
+    console.log('I am instance #', this.instanceIndex)
+  } 
 })
 .init(function ({ foo }, { stamp }) {
   this.instanceIndex = stamp.compose.configuration.instanceCounter // assign instance number
   stamp.compose.configuration.instanceCounter += 1 // increment the counter
 })
-.staticPropertyDescriptors({ 
+.staticPropertyDescriptors({ // give the Stamp.name a non-default name. Works in ES6 only.
   name: { value: 'InstanceCounter' }
 })
 .statics({ 
-  printTotalInstanceCount() { console.log(this.compose.configuration.instanceCounter) } 
+  printTotalInstanceCount() {
+    console.log(this.compose.configuration.instanceCounter)
+  } 
 })
 .composers(function ({ stamp }) {
   // We need to reset the counter each time the InstanceCounter is composed with.

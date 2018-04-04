@@ -14,7 +14,7 @@ const logger = Logger({ level: 42 })
 logger.level === 42
 ```
 
-**Each initializer will be executed** on object creation.
+**Each initializer will be executed** on object creation. _\(But the list of initializers is always deduplicated.\)_
 
 ```js
 const Server = stampit(Logger, {
@@ -41,7 +41,7 @@ const server = NullServer()
 server === null
 ```
 
-The initializer are concatenated into a deduplicated array. As the result, the order of composition becomes the order of initializer execution.
+The initializer are concatenated into a deduplicated array. As the result, the order of composition becomes **the order of initializer execution**.
 
 ```js
 const {init} = stampit
@@ -56,6 +56,9 @@ MultiLog() // Will print three times:
 // 1
 // 1
 // 1
+
+// because there are 3 initializers
+MultiLog.compose.initializers.length === 3
 ```
 
 Stamps remove duplicate initializers.
@@ -72,9 +75,18 @@ const MultiLog = stampit(Log1, Log2, Log3)
 
 MultiLog() // Will print only once:
 // 1
+
+// because there is only one initializer
+MultiLog.compose.initializers.length === 1
 ```
 
 ## Initializer arguments
+
+> _NOTE_
+>
+> Parameter - a variable being passed to a function.
+>
+> Argument - a variable received by a function.
 
 You can pass multiple parameters to your stamp while creating an object. First parameter passed as is to all initializers. But the rest of the parameters are available inside the `{args}` property of the second initializer argument.
 
@@ -82,7 +94,7 @@ You can pass multiple parameters to your stamp while creating an object. First p
 const MultiArg = stampit({
   init(arg1, { args }) {
     arg1 === 'foo'
-    args[0] === arg1
+    args[0] === arg1  // first argument of the initializer is passed from factory first parameter
     args[0] === 'foo'
     args[1] === 'BAR'
     args[2] === 'thing'
@@ -107,7 +119,7 @@ NoException(/* nothing here! */)
 
 Every initializer second argument is always this object: `{ stamp, args, instance }`. Where:
 
-* `stamp` is the stamp which was used to create this object.
+* `stamp` is the stamp which was used to create this object. Useful to retrieve stamp's metadata \(aka descriptor\).
 * `args` the parameters passed to the stamp while creating the object.
 * `instance` the object instance itself. Always equals `this` context of the initializer.
 
@@ -117,7 +129,7 @@ const PrintMyArgs = stampit({
     console.log('Creating object from this stamp:', stamp)
     console.log('List of arguments:', args)
     console.log('Object instance:', instance)
-    
+
     this === instance
   }
 })

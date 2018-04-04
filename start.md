@@ -12,7 +12,7 @@ const stampit = require('@stamp/it')
 let Stamp = stampit() // creates new stamp
 ```
 
-Compose it with another stamp.
+[Compose](/composition.md) it with another stamp.
 
 ```js
 const HasLog = require('./HasLog')
@@ -20,7 +20,7 @@ const HasLog = require('./HasLog')
 Stamp = Stamp.compose(HasLog) // creates a new stamp composed from the two
 ```
 
-Add default properties to it.
+Add default [properties](/properties.md) to it.
 
 ```js
 Stamp = Stamp.props({ // creates a new derived stamp
@@ -28,7 +28,7 @@ Stamp = Stamp.props({ // creates a new derived stamp
 })
 ```
 
-Add a method.
+Add a [method](/methods.md).
 
 ```js
 Stamp = Stamp.methods({ // creates a new derived stamp
@@ -40,7 +40,7 @@ Stamp = Stamp.methods({ // creates a new derived stamp
 })
 ```
 
-Add an initializer \(aka constructor\).
+Add an [initializer](/initializers.md) \(aka constructor\).
 
 ```js
 Stamp = Stamp.init(function ({ bucket }, { stamp }) {
@@ -51,7 +51,7 @@ Stamp = Stamp.init(function ({ bucket }, { stamp }) {
 })
 ```
 
-Add a configuration.
+Add a [configuration](/configuration.md).
 
 ```js
 Stamp = Stamp.conf({
@@ -59,7 +59,7 @@ Stamp = Stamp.conf({
 })
 ```
 
-Add a static method.
+Add a [static](/static-properties.md) method.
 
 ```js
 Stamp = Stamp.statics({
@@ -69,7 +69,7 @@ Stamp = Stamp.statics({
 })
 ```
 
-Make the `.s3instance` , `.log`, and `.S3` properties private.
+Make the `.s3instance` , `.log`, and `.S3` properties [private](/stampprivatize.md).
 
 ```js
 const Privatize = require('@stamp/privatize')
@@ -88,17 +88,17 @@ const FileStore = Stamp
 Use your stamp ad-hoc.
 
 ```js
-function uploadTo(req, res, next) {
-  FileStore({ bucket: req.params.bucket }).upload({ fileName: req.query.file, stream: req })
-  .then(() => res.sendStatus(201))
-  .catch(next)
+async function uploadTo(req, res) {
+  await FileStore({ bucket: req.params.bucket }).upload({ fileName: req.query.file, stream: req })
+
+  res.sendStatus(201)
 }
 ```
 
 Or preconfigure it.
 
 ```js
-const CatGifStore = FileStore.setDefaultBucket('cat-gifs')
+const CatGifStore = FileStore.setDefaultBucket('cat-gifs') // pre-configuring the bucket name
 
 const catGifStore = CatGifStore() // create an instance of the store
 
@@ -138,14 +138,6 @@ const HasLog = require('./HasLog')
 const Privatize = require('@stamp/privatize')
 
 const FileStore = HasLog.compose(Privatize, {
-  conf: {
-    bucket: process.env.UPLOAD_BUCKET
-  },
-  statics: {
-    setDefaultBucket(bucket) {
-      return this.conf({ bucket })
-    }
-  },
   props: {
     S3: require('aws-sdk').S3
   },
@@ -159,6 +151,14 @@ const FileStore = HasLog.compose(Privatize, {
     upload({ fileName, stream }) {
       this.log.info({ fileName }, 'Uploading file')
       return this.s3instance.upload({ Key: fileName, Body: stream }).promise()
+    }
+  },
+  conf: {
+    bucket: process.env.UPLOAD_BUCKET
+  },
+  statics: {
+    setDefaultBucket(bucket) {
+      return this.conf({ bucket })
     }
   }
 })

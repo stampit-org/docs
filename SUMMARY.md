@@ -16,10 +16,12 @@
 * [Methods](methods.md)
 * [Initializers](initializers.md)
 * [Static properties](static-properties.md)
+* [Configuration](configuration.md)
 
 ## Ecosystem
 
 * [Ecosystem Overview](ecosystem.md)
 * [@stamp/collision](stampcollision.md)
 * [@stamp/required](stamprequired.md)
+* [@stamp/privatize](stampprivatize.md)
 

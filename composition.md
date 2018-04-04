@@ -12,7 +12,7 @@ Go to [API Quick start](/start.md) to learn how to create a Stamp.
 const object = Stamp() // creating a new object from a stamp
 ```
 
-## Stamp's metadata
+## Stamp's metadata \(descriptor\)
 
 But unlike plain functions, Stamps carry around the metadata about the object they are going to produce. The metadata is attached to the `Stamp.compose` object. Another name for that metadata is "stamp descriptor" or just "descriptor".
 
@@ -79,6 +79,27 @@ The `compose`  and `.compose` functions are doing only one thing: **merge stamp 
 >
 > Every time you call `compose` or `.compose` you create a **NEW** stamp.
 
+### Naming conflict resolution
+
+There is no naming conflict resolution in stamps by default. This means that in case of conflicting properties/methods the last composed overwrites all previous.
+
+```js
+const Stamp1 = stampit({ prop: { conflicting: 'foo' } })
+const Stamp2 = stampit({ prop: { conflicting: 'oops!!!' } })
+
+const ComposedStamp = compose(Stamp1, Stamp2)
+ComposedStamp.compose.properties.conflicting === 'oops!!!'
+
+const ReverseComposedStamp = compose(Stamp2, Stamp1)
+ReverseComposedStamp.compose.properties.conflicting === 'foo'
+```
+
+This behaviour is **by design**.
+
+> NOTE
+>
+> If you really need to make sure none overwrites your method you can use [@stamp/collision](/stampcollision.md) stamp. Compose it into your stamp. However, in our practice stamps tend to stay quite small, so that conflict resolution is never needed.
+
 ## Creating stamps
 
 To create a new stamp from scratch you would need to use one of the JavaScript modules available:
@@ -94,7 +115,7 @@ const StampFromCompose = compose(Stamp1, Stamp2, Stamp3)
 const StampFromStampit = stampit(Stamp1, Stamp2, Stamp3)
 ```
 
-However, `stampit` adds few more handy APIs to your stamp:
+However, `stampit` adds few more handy APIs to your stamp \(see comments\):
 
 ```js
 const NewStamp1 = StampFromStampit.methods({ myMethod () {} }) // add a method metadata using chaining API
@@ -102,12 +123,16 @@ const NewStamp2 = stampit({ props: { myProperty: 'my value' } }) // using "props
 // etc
 ```
 
-Whereas `compose` does not have the handy API:
+Whereas `compose` does not have the handy API \(see comments\):
 
 ```js
 StampFromCompose.methods === undefined // THERE IS NO .methods CHAINING API
 compose({ props: { myProperty: 'my value' } }) // WRONG! YOU MUST USE FULL `properties` KEY
 ```
+
+> NOTE
+>
+> The stampit nicer API is nothing else but few additional [static methods](/static-properties.md) in your stamps. That's it.
 
 
 
