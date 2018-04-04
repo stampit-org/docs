@@ -35,9 +35,9 @@ Add a [method](/methods.md).
 ```js
 Stamp = Stamp.methods({ // creates a new derived stamp
   upload({ fileName, stream }) {
-    this.log.info({ fileName }, 'Uploading file')
+    this.log.info({ fileName }, 'Uploading file') // using the .log property composed in the beginning
 
-    return this.s3instance.upload({ Key: fileName, Body: stream }).promise()
+    return this.s3instance.upload({ Key: fileName, Body: stream }).promise() // using .s3instance, see below
   }
 })
 ```
@@ -48,7 +48,7 @@ Add an [initializer](/initializers.md) \(aka constructor\).
 Stamp = Stamp.init(function ({ bucket }, { stamp }) {
   this.s3instance = new this.S3({ 
     apiVersion: '2006-03-01', 
-    params: { Bucket: bucket || stamp.compose.configuration.bucket }
+    params: { Bucket: bucket || stamp.compose.configuration.bucket } // using configuration.bucket, see below
   })
 })
 ```
@@ -91,7 +91,9 @@ Use your stamp ad-hoc.
 
 ```js
 async function uploadTo(req, res) {
-  await FileStore({ bucket: req.params.bucket }).upload({ fileName: req.query.file, stream: req })
+  const fileStore = FileStore({ bucket: req.params.bucket }) // create instance
+
+  await fileStore.upload({ fileName: req.query.file, stream: req }) // use the method declared above
 
   res.sendStatus(201)
 }
@@ -143,17 +145,17 @@ const FileStore = HasLog.compose(Privatize, {
   props: {
     S3: require('aws-sdk').S3
   },
-  init({ bucket }, { stamp }) {
-    this.s3instance = new this.S3({ 
-      apiVersion: '2006-03-01', 
-      params: { Bucket: bucket || stamp.compose.configuration.bucket }
-    })
-  },
   methods: {
     upload({ fileName, stream }) {
       this.log.info({ fileName }, 'Uploading file')
       return this.s3instance.upload({ Key: fileName, Body: stream }).promise()
     }
+  },
+  init({ bucket }, { stamp }) {
+    this.s3instance = new this.S3({ 
+      apiVersion: '2006-03-01', 
+      params: { Bucket: bucket || stamp.compose.configuration.bucket }
+    })
   },
   conf: {
     bucket: process.env.UPLOAD_BUCKET
