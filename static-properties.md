@@ -67,10 +67,10 @@ instance.getFactor() === 5 // the factor was set
 
 ## Descriptor merging algorithm
 
-The properties are copied **by assignment**. In other words - **by reference **using `Object.assign`.
+The static properties are copied **by assignment**. In other words - **by reference **using `Object.assign`.
 
 ```js
-HasLog().log === RequestHandler().log
+HasFactor.allowFactorSetter === HasFactorAllowed.allowFactorSetter
 ```
 
 In case of conflicts the last composed property wins.
@@ -84,31 +84,31 @@ function func(allow) {
   return this.conf({ HasFactor: { allowSetter: allow } })
 }
 
-const HasLog = stampit({
+const HasFactor = stampit({
   statics: {
     allowFactorSetter: func
   }
 })
 
-const HasLog = stampit({
+const HasFactor = stampit({
   staticProperties: {
     allowFactorSetter: func
   }
 })
 
-const HasLog = stampit.statics({
+const HasFactor = stampit.statics({
   allowFactorSetter: func
 })
 
-const HasLog = stampit.staticProperties({
+const HasFactor = stampit.staticProperties({
   allowFactorSetter: func
 })
 
-const HasLog = stampit().statics({
+const HasFactor = stampit().statics({
   allowFactorSetter: func
 })
 
-const HasLog = stampit().staticProperties({
+const HasFactor = stampit().staticProperties({
   allowFactorSetter: func
 })
 ```
