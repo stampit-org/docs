@@ -13,7 +13,7 @@ The `Object.assign` is used for these descriptor properties:
 
 The special deep merging algorithm \(see below\) is used for these descriptor properties:
 
-* deepProperties
+* [deepProperties](/properties/deep-properties.md)
 * staticDeepProperties
 * deepConfiguration
 
@@ -49,11 +49,11 @@ const MyStamp1 = stampit()
 
 const deepObject1 = {
   [Symbol('foo')]: { one: 'first' },                 // this plain object will be deep merged
-  
+
   array: [0, 'bar', () => {}, { obj: 'my object' }], // this array will be concatenated with
-  
+
   func: MyStamp1,                                    // this stamp will be replaced with another stamp
-  
+
   something: [42],                                   // this array will be replaced with an object
 
   oldKey: 'some value'
@@ -63,13 +63,13 @@ const MyStamp2 = stampit()
 
 const deepObject2 = {
   [Symbol('foo')]: { two: 'second' },
-  
+
   array: [0, 'bar', { another: 'object' }],
-  
+
   func: MyStamp2,
-  
+
   something: { [0]: 42 },
-  
+
   newKey: 'some value'
 }
 ```
@@ -79,13 +79,13 @@ The merged result of the two objects above will be this:
 ```js
 const deepResult = {
   [Symbol('foo')]: { one: 'first', two: 'second' }, // contains properties from both objects
-  
+
   array: [0, 'bar', () => {}, { obj: 'my object' }, 0, 'bar', { another: 'object' }], // both arrays are here
-  
+
   func: MyStamp2,                                   // Stamp2 replaced the Stamp1
-  
+
   something: { [0]: 42 },                           // the array was replaced with the object
-  
+
   oldKey: 'some value',                             // these two were simply carried across
   newKey: 'some value'
 }
