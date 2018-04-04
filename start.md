@@ -1,5 +1,7 @@
 # Quick start
 
+Install the JavaScript module from the NPM registry.
+
 ```bash
 npm i @stamp/it
 ```
