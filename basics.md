@@ -71,33 +71,26 @@ const Foo = DefaultFoo.compose(PrintFoo, PassFoo)
 The full list of the shortcut functions matches the list of keys you can pass as stamp descriptor \(see above\).
 
 ```js
-const {
+const {     // destructuring
   methods,
 
-  props,
-  properties,
+  props, properties,
 
-  deepProps,
-  deepProperties,
+  deepProps, deepProperties,
 
-  init,  
-  initializers,
+  init, initializers,
 
   propertyDescriptors,
 
-  statics,
-  staticProperties,
+  statics, staticProperties,
 
-  deepStatics,
-  staticDeepProperties,
+  deepStatics, staticDeepProperties,
 
   staticPropertyDescriptors,
 
-  conf,
-  configuration,
+  conf, configuration,
 
-  deepConf,
-  deepConfiguration,
+  deepConf, deepConfiguration,
 
   composers
 } = stampit
@@ -155,7 +148,7 @@ const HasLog = stampit().props({
 
 ### Chaining
 
-You can chain all the shortcut functions \(see list above\).
+You can chain all the shortcut functions \(see the full list above\).
 
 ```js
 const InstanceCounter = stampit()

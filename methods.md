@@ -45,6 +45,8 @@ server.debug('Starting server')
 server.start()
 ```
 
+## Descriptor merging algorithm
+
 The methods are copied **by assignment**. In other words - **by reference **using `Object.assign`.
 
 ```js
