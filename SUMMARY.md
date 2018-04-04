@@ -3,7 +3,7 @@
 ## Essentials
 
 * [Overview](README.md)
-* [What is a Stamp](composition.md)
+* [What is a Stamp](descriptor.md)
 * [Installation](installation.md)
 * [Stamp internals](object-creation.md)
 * [Specification](specification.md)
@@ -13,6 +13,7 @@
 * [Quick start](start.md)
 * [Basics](basics.md)
 * [Properties](properties.md)
+  * [Deep properties](properties/deep-properties.md)
 * [Methods](methods.md)
 * [Initializers](initializers.md)
 * [Static properties](static-properties.md)
