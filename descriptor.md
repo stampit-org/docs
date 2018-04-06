@@ -61,7 +61,7 @@ function isStamp (object) {
 The main reason why stamps exist is the ability to freely compose stamps together.
 
 ```js
-const ComposedStamp = compose(Stamp1, Stamp2, Stamp3)
+const ComposedStamp = stampit(Stamp1, Stamp2, Stamp3)
 ```
 
 The line above is identical to these:
@@ -70,14 +70,14 @@ The line above is identical to these:
 const ComposedStamp = Stamp1.compose(Stamp2, Stamp3)
 const ComposedStamp = Stamp1.compose(Stamp2).compose(Stamp3)
 const ComposedStamp = Stamp1.compose(Stamp2.compose(Stamp3))
-const ComposedStamp = compose().compose(Stamp1, Stamp2, Stamp3)
+const ComposedStamp = stampit().compose(Stamp1, Stamp2, Stamp3)
 ```
 
-The `compose`  and `.compose` functions are doing only one thing: **merge stamp descriptors according to the **[**stamp specification**](/specification.md).
+The `stampit`  and `.compose` functions are doing only one thing: **merge stamp descriptors according to the **[**stamp specification**](/specification.md).
 
 > _NOTE_
 >
-> Every time you call `compose` or `.compose` you create a **NEW** stamp.
+> Every time you call `stampit` or `.compose` you create a **NEW** stamp.
 
 ### Naming conflict resolution
 

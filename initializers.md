@@ -43,7 +43,7 @@ server === null
 
 ## Descriptor merging algorithm
 
-The initializer are concatenated into a deduplicated array. As the result, the order of composition becomes **the order of initializer execution**.
+The initializers are concatenated into a deduplicated array. As the result, the order of composition becomes **the order of initializer execution**.
 
 ```js
 const {init} = stampit
