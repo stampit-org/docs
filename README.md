@@ -1,8 +1,8 @@
 # What is stampit
 
-`stampit` is a JavaScript module which implements the [stamp specification](https://www.gitbook.com/book/stampit-org/docs/edit#). Stamps are composable factory functions.
+`stampit` is a JavaScript module which implements the [**stamp** specification](https://www.gitbook.com/book/stampit-org/docs/edit#). **Stamps** are composable factory functions.
 
-Think of stamps as classic classes but without any limits, boundaries, or rules.
+**Think of **_**stamps**_** as classic classes but without any limits, boundaries, or rules.**
 
 The stamps brag large amount of features and things you can do with your objects and/or stamps.
 
@@ -14,19 +14,19 @@ Differences from classes:
     * When you extend a class you link class prototypes.
   * Stamps
     * Stamp are single object + single prototype. See picture below.
-    * When you "inherit" you separately merge [methods](/methods.md), separately merge [properties](/properties.md), separately merge [static properties](/static-properties.md), separately merge [initializers](/initializers.md) \(aka constructors\), etc.
-    * That's why it is not just inheritance, but special type of object composition.
+    * When you "extend" you separately merge [methods](/methods.md), separately merge [properties](/properties.md), separately merge [static properties](/static-properties.md), separately merge [initializers](/initializers.md) \(aka constructors\), etc etc etc.
+    * That's why it is not just inheritance, but special type of object composition. The merging algorithm is standardized.
     * You can influence composition result with your code at runtime using the [composers](/composers.md) feature.
 * Object creation
   * Classes
     * In most languages \(except JavaScript\) you execute only one constructor per class.
-    * To pass data to the parent constructor you have to manually call `this.super(data)`.
+    * To pass data to the parent constructor you have to manually call parent constructor `this.super(data)`.
+    * To create an object you need to use the `new` keyword: `const object = new MyClass()`.
   * Stamps
-    * Stamps execute every initializer \(aka constructor\).
+    * Stamp execute every initializer \(aka constructor\) it has.
     * All initializers receive exactly the same set of arguments, no need to manually pass data.
     * The initializer execution sequence is the same as the stamp composition sequence.
-
-
+    * To create an object you call stamp as a function: `const object = MyStamp()`.
 
 ![](/assets/class vs stamp.png)
 
