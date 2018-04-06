@@ -1,6 +1,6 @@
 # Quick start
 
-Install the JavaScript module from the NPM registry.
+[Install](/installation.md) the JavaScript module from the NPM registry.
 
 ```bash
 npm i @stamp/it
@@ -93,7 +93,7 @@ Use your stamp ad-hoc.
 async function uploadTo(req, res) {
   const fileStore = FileStore({ bucket: req.params.bucket }) // create instance
 
-  await fileStore.upload({ fileName: req.query.file, stream: req }) // use the method declared above
+  await fileStore.upload({ fileName: req.query.file, stream: req }) // use the method of the stamp
 
   res.sendStatus(201)
 }

@@ -19,6 +19,7 @@
 * [Initializers](initializers.md)
 * [Static properties](static-properties.md)
 * [Configuration](configuration.md)
+  * [Deep configuration](configuration/deep-configuration.md)
 * [Composers](composers.md)
 
 ## Ecosystem

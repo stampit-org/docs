@@ -1,6 +1,6 @@
 # Configuration
 
-Configuration is a storage of an arbitrary data. It is stored in the `.configuration` metadata of stamp's descriptor.
+Configuration is a storage of an arbitrary data in the `.configuration` metadata of stamp's descriptor.
 
 ```js
 let HaveApiKey = stampit({
