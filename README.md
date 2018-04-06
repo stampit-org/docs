@@ -6,7 +6,7 @@
 
 The stamps brag large amount of features and things you can do with your objects and/or stamps.
 
-![](/assets/class vs stamp.png)
+![](/assets/class_vs_stamp.png)
 
 # Differences from classes
 
