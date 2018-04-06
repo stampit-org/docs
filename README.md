@@ -4,9 +4,12 @@
 
 **Think of **_**stamps**_** as classic classes but without any limits, boundaries, or rules.**
 
-The stamps brag large amount of features and things you can do with your objects and/or stamps.
+The stamps brag large amount of features and things you can do with your objects and/or stamps.  
 
-Differences from classes:
+
+![](blob:https://legacy.gitbook.com/ac00354f-7545-4a52-b53e-0066acb339c7)
+
+# Differences from classes
 
 * Inheritance
   * Classes
@@ -27,8 +30,6 @@ Differences from classes:
     * All initializers receive exactly the same set of arguments, no need to manually pass data.
     * The initializer execution sequence is the same as the stamp composition sequence.
     * To create an object you call stamp as a function: `const object = MyStamp()`.
-
-![](/assets/class vs stamp.png)
 
 # History
 
