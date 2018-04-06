@@ -18,6 +18,7 @@
   * [Deep properties](properties/deep-properties.md)
 * [Initializers](initializers.md)
 * [Static properties](static-properties.md)
+  * [Static deep properties](static-properties/static-deep-properties.md)
 * [Configuration](configuration.md)
   * [Deep configuration](configuration/deep-configuration.md)
 * [Composers](composers.md)
