@@ -2,7 +2,7 @@
 
 Composers are callback functions executed each time a composition happens. There can be as many as you wish composers on each stamp.
 
-> Composers are a very powerful feature. If you can implement something without composers then it's a good idea avoid them.
+> Composers are a very powerful feature. If you can implement something without composers then it's a good idea to avoid them.
 
 It is highly recommended to **not create new stamps** in the composers, but **mutate the given stamp**.
 
@@ -18,13 +18,15 @@ const InstanceOf = stampit.composers(({ stamp, composables }) => {
   })
 })
 
-console.log(InstanceOf() instanceof InstanceOf) // true
+console.log(InstanceOf() instanceof InstanceOf)     // true
+console.log(InstanceOf().getStamp() === InstanceOf) // true
 
-const Stamp = InstanceOf.props({ a: 1 })
-console.log(Stamp() instanceof Stamp)           // true
+const Stamp = InstanceOf.props({ anything: 1 })
+console.log(Stamp() instanceof Stamp)               // true
+console.log(Stamp().getStamp() === Stamp)           // true
 
-console.log(Stamp() instanceof InstanceOf)      // false
-console.log(InstanceOf() instanceof Stamp)      // false
+console.log(Stamp() instanceof InstanceOf)          // false
+console.log(InstanceOf() instanceof Stamp)          // false
 ```
 
 
