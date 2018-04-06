@@ -4,10 +4,9 @@
 
 **Think of **_**stamps**_** as classic classes but without any limits, boundaries, or rules.**
 
-The stamps brag large amount of features and things you can do with your objects and/or stamps.  
+The stamps brag large amount of features and things you can do with your objects and/or stamps.
 
-
-![](blob:https://legacy.gitbook.com/ac00354f-7545-4a52-b53e-0066acb339c7)
+![](/assets/class vs stamp.png)
 
 # Differences from classes
 
