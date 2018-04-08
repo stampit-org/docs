@@ -18,7 +18,7 @@ const ObjectIdSchemaType = stampit.deepStatics({
   }
 })
 
-const Schema = stampit(SchemaTypes, ObjectIdSchemaType, {
+const Schema = stampit(SchemaTypes, ObjectIdSchemaType, { // stamp deep merging kicks in this line
   init(data, { stamp }) {
     // stamp.Types.String, stamp.Types.ID, ...
   }
@@ -27,10 +27,9 @@ const Schema = stampit(SchemaTypes, ObjectIdSchemaType, {
 // Schema.Types.String
 // Schema.Types.Number
 // Schema.Types.Array
+// as well as
 // Schema.Types.ID
 // Schema.Types.ObjectId
-
-module.exports = Schema
 ```
 
 ## Descriptor merging algorithm
