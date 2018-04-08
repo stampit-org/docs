@@ -1,0 +1,4 @@
+# Static property descriptors
+
+
+

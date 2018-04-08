@@ -61,7 +61,7 @@ In case of conflicts the last composed method wins. To avoid method collision us
 
 ## Other ways to add methods
 
-Exactly the same stamp can be created in few other ways. Here they all are.
+Exactly the same stamp can be created in few ways. Here they all are.
 
 ```js
 function myDebug(str) {

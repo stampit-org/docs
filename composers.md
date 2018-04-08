@@ -81,7 +81,7 @@ Every composer always receive this object: `{ stamp, composables }`. Where:
 
 ## Other ways to add composers
 
-Exactly the same stamp can be created in few other ways. Here they all are.
+Exactly the same stamp can be created in few ways. Here they all are.
 
 ```js
 function myDebugComposer ({ stamp, composables }) {

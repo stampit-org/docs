@@ -12,7 +12,7 @@ let HaveApiKey = stampit({
 HaveApiKey.compose.configuration.apiKey === process.env.API_KEY
 ```
 
-You can set it in [static methods](/static-properties.md):
+You can set configuration in [static methods](/static-properties.md):
 
 ```js
 HaveApiKey = HaveApiKey.statics({
@@ -50,7 +50,7 @@ In case of conflicts the last composed property wins.
 
 ## Other ways to add configuration
 
-Exactly the same stamp can be created in few other ways. Here they all are.
+Exactly the same stamp can be created in few ways. Here they all are.
 
 ```js
 const HasLog = stampit({

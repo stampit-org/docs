@@ -139,7 +139,7 @@ const PrintMyArgs = stampit({
 
 ## Other ways to add initializers
 
-Exactly the same stamp can be created in few other ways. Here they all are.
+Exactly the same stamp can be created in few ways. Here they all are.
 
 ```js
 function myInitializer ({ level = 50 }) {

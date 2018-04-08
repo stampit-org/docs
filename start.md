@@ -4,6 +4,8 @@
 
 ```bash
 npm i @stamp/it
+# or
+npm i stampit
 ```
 
 Create an empty stamp.

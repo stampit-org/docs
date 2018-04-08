@@ -40,7 +40,7 @@ In case of conflicts the last composed property wins.
 
 ## Other ways to add properties
 
-Exactly the same stamp can be created in few other ways. Here they all are.
+Exactly the same stamp can be created in few ways. Here they all are.
 
 ```js
 const myLogger = require('bunyan').createLogger({ name: 'my logger' })

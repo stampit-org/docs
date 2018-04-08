@@ -26,7 +26,7 @@ MyKue.compose.deepConfiguration.Kue.attempts === 3
 MyKue.compose.deepConfiguration.Kue.priority === 'high'
 ```
 
-You can set it in [static methods](/static-properties.md):
+You can set deep configuration in [static methods](/static-properties.md):
 
 ```js
 Kue = Kue.statics({
@@ -34,13 +34,12 @@ Kue = Kue.statics({
     return this.deepConf({Kue: options}) // create new stamp by composing parent stamp with some configuration
   },
 
-  connectionString(connectionString) { return this.configureKue({connectionString} },  
-  
-  priority(priority) { return this.configureKue({priority} },
-  attempts(attempts) { return this.configureKue({attempts}) },
-  delay(delay) { return this.configureKue({delay}) },
-  ttl(ttl) { return this.configureKue({ttl}) },
-  events(events) { return this.configureKue({events}) }
+  connectionString(connectionString) { return this.configureKue({connectionString} },
+  priority(priority)                 { return this.configureKue({priority} },
+  attempts(attempts)                 { return this.configureKue({attempts}) },
+  delay(delay)                       { return this.configureKue({delay}) },
+  ttl(ttl)                           { return this.configureKue({ttl}) },
+  events(events)                     { return this.configureKue({events}) }
 })
 
 const MyRegularJobKue = Kue.attempts(5).delay(1000).ttl(10).events(true).priority('low')
@@ -74,7 +73,7 @@ Kue.compose.deepConfiguration.Kue !== MyKue.compose.deepConfiguration.Kue // NEV
 
 ## Other ways to add deep configuration
 
-Exactly the same stamp can be created in few other ways. Here they all are.
+Exactly the same stamp can be created in few ways. Here they all are.
 
 ```js
 const myKueConf = { Kue: { priority: 'normal' } }

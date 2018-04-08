@@ -33,7 +33,7 @@ The deepProperties are **deeply merged** using stamp [deep merging algorithm](/s
 S3KeyIdAndSecret().Secrets !== DefaultSecrets().Secrets // NEVER EQUAL! NO MATTER WHAT!
 ```
 
-Sometimes a regular \(shallow\) property has the same name as a deep property. While creating an object instance the shallow property wins. See [stamp internals](/object-creation.md).
+Sometimes a regular \(shallow\) property has the same name as a deep property. While creating an object instance the shallow property wins. See [stamp internals](/specification/object-creation-internals.md).
 
 ```js
 const NullSecrets = stampit.props({
@@ -53,7 +53,7 @@ Result().Secrets === null // the regular property overwrites deep property while
 
 ## Other ways to add deep properties
 
-Exactly the same stamp can be created in few other ways. Here they all are.
+Exactly the same stamp can be created in few ways. Here they all are.
 
 ```js
 const mySecrets = { authServiceToken: process.env.AUTH_SERVICE_TOKEN }
