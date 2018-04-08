@@ -14,16 +14,16 @@ Head straight to the [Quick Start](/start.md) page for code examples.
 
 * Inheritance
   * Classes
-    * Classes do child+parent+parent+parent... inheritance chains. See picture below.
+    * Classes do child+parent+parent+parent... inheritance chains. See picture above.
     * When you extend a class you link class prototypes.
   * Stamps
-    * Stamp are single object + single prototype. See picture below.
+    * Stamp are single object + single prototype. See picture above.
     * When you "extend" you separately merge [methods](/methods.md), separately merge [properties](/properties.md), separately merge [static properties](/static-properties.md), separately merge [initializers](/initializers.md) \(aka constructors\), etc etc etc.
     * That's why it is not just inheritance, but special type of object composition. The stamp composition algorithm is [standardized](/specification/merging-algorithm.md).
     * You can influence composition result with your code at runtime using the [composers](/composers.md) feature.
 * Object creation
   * Classes
-    * In most languages \(except JavaScript\) you execute only one constructor per class.
+    * In most programming languages you execute only one constructor per class.
     * To pass data to the parent constructor you have to manually call parent constructor `this.super(data)`.
     * To create an object you need to use the `new` keyword: `const object = new MyClass()`.
   * Stamps
