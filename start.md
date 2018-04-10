@@ -111,7 +111,7 @@ const catGifStore = CatGifStore() // create an instance of the store
 await catGifStore.upload({ fileName: 'cat.gif', stream: readableStream })
 ```
 
-If you want to silence the shameful fact that you are collecting cat gifs then here is how you disable log. We overwrite the `log` property with a silent one.
+If you want to silence the shameful fact that you are collecting cat gifs then here is how you disable log. Just overwrite the `log` property with a silent one.
 
 ```js
 const SilentCatGifStore = CatGifStore.props({

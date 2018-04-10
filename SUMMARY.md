@@ -33,4 +33,5 @@
 * [@stamp/required](stamprequired.md)
 * [@stamp/privatize](stampprivatize.md)
 * [@stamp/named](stampnamed.md)
+* [@stamp/instanceof](stampinstanceof.md)
 

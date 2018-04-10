@@ -31,6 +31,10 @@ console.log(InstanceOf() instanceof Stamp)          // false
 
 The above `InstanceOf` stamp overrides the default `instanceof` behavior using ES6 will-known symbol `Symbol.hasInstance`. Compose it with your stamps if you need the `instanceof` to work as expected for you.
 
+> NOTE
+>
+> You can find the stamp above as the [`@stamp/instanceof`](/stampinstanceof.md) NPM module.
+
 ## Descriptor merging algorithm
 
 The composers are concatenated into a deduplicated array. As the result, the order of composition becomes **the order of composer execution**.
