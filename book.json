@@ -1,4 +1,7 @@
 {
+    "title": "Stampit documentation",
+    "description": "This GitBook is about stampit, stamps, module ecosystem, best practices, examples, etc.",
+    "author": "Vasyl Boroviak",
     "plugins": [ "theme-api" ],
     "pluginsConfig": {
         "theme-api": {
