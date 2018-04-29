@@ -12,19 +12,19 @@
 
 ## API
 
-* [Quick start](start.md)
-* [Basics](basics.md)
-* [Methods](methods.md)
-* [Properties](properties.md)
-* [Deep properties](deep-properties.md)
-* [Initializers](initializers.md)
-* [Static properties](static-properties.md)
-* [Static deep properties](static-deep-properties.md)
-* [Configuration](configuration.md)
-* [Deep configuration](deep-configuration.md)
-* [Composers](composers.md)
-* [Property descriptors](property-descriptors.md)
-* [Static property descriptors](static-property-descriptors.md)
+* [Quick start](api/start.md)
+* [Basics](api/basics.md)
+* [Methods](api/methods.md)
+* [Properties](api/properties.md)
+* [Deep properties](api/deep-properties.md)
+* [Initializers](api/initializers.md)
+* [Static properties](api/static-properties.md)
+* [Static deep properties](api/static-deep-properties.md)
+* [Configuration](api/configuration.md)
+* [Deep configuration](api/deep-configuration.md)
+* [Composers](api/composers.md)
+* [Property descriptors](api/property-descriptors.md)
+* [Static property descriptors](api/static-property-descriptors.md)
 
 ## Ecosystem
 
