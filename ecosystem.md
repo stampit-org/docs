@@ -23,8 +23,8 @@
 ## Other
 
 * **@stamp/is** - Various validation functions used with stamps
-* **@stamp/core** - Core functions for creating stamps
-* **@stamp/check-compose** - Command line tool to test your 'compose' function implementation
+* **@stamp/core** - Core functions for creating stamps. Used in **@stamp/it**
+* **@stamp/check-compose** - Command line tool and library to test your `compose` function implementation
 
 
 
