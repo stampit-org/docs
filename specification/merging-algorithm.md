@@ -6,21 +6,21 @@ The `Object.assign` is used for these descriptor properties:
 
 * [methods](/methods.md)
 * [properties](/properties.md)
-* propertyDescriptors
+* [propertyDescriptors](/property-descriptors.md)
 * [staticProperties](/static-properties.md)
-* staticPropertyDescriptors
+* [staticPropertyDescriptors](/static-property-descriptors.md)
 * [configuration](/configuration.md)
 
 The special deep merging algorithm \(see below\) is used for these descriptor properties:
 
 * [deepProperties](/properties/deep-properties.md)
-* staticDeepProperties
-* deepConfiguration
+* [staticDeepProperties](/static-properties/static-deep-properties.md)
+* [deepConfiguration](/configuration/deep-configuration.md)
 
 The array concatenation and deduplication \(see below\) is used for these descriptor properties:
 
 * [initializers](/initializers.md)
-* composers
+* [composers](/composers.md)
 
 ## Array concatenation and deduplication
 
