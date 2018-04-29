@@ -177,7 +177,10 @@ Replacing actual `S3` with a fake one.
 ```js
 const MockedFileStore = FileStore.props({
   S3() {
-    return { upload: () => ({ promise: () => Promise.resolve() }) }
+    return {
+      upload() {
+        return { promise() { return Promise.resolve() } }
+      }
   }
 })
 ```
