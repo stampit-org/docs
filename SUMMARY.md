@@ -28,7 +28,7 @@
 
 ## Ecosystem
 
-* [Ecosystem Overview](ecosystem/ecosystem.md)
+* [Ecosystem Overview](ecosystem/README.md)
 * [@stamp/collision](ecosystem/stampcollision.md)
 * [@stamp/required](ecosystem/stamprequired.md)
 * [@stamp/privatize](ecosystem/stampprivatize.md)
