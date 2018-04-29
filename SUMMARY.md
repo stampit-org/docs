@@ -28,10 +28,10 @@
 
 ## Ecosystem
 
-* [Ecosystem Overview](ecosystem.md)
-* [@stamp/collision](stampcollision.md)
-* [@stamp/required](stamprequired.md)
-* [@stamp/privatize](stampprivatize.md)
-* [@stamp/named](stampnamed.md)
-* [@stamp/instanceof](stampinstanceof.md)
+* [Ecosystem Overview](ecosystem/ecosystem.md)
+* [@stamp/collision](ecosystem/stampcollision.md)
+* [@stamp/required](ecosystem/stamprequired.md)
+* [@stamp/privatize](ecosystem/stampprivatize.md)
+* [@stamp/named](ecosystem/stampnamed.md)
+* [@stamp/instanceof](ecosystem/stampinstanceof.md)
 
