@@ -22,7 +22,7 @@
 
 ## Other
 
-* **@stamp/is** - Various validation functions used with stamps
+* **@stamp/is** - Various validation functions used with stamps. Used in **@stamp/it**
 * **@stamp/core** - Core functions for creating stamps. Used in **@stamp/it**
 * **@stamp/check-compose** - Command line tool and library to test your `compose` function implementation
 
