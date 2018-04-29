@@ -5,7 +5,7 @@
 * [Overview](README.md)
 * [What is a Stamp](descriptor.md)
 * [Installation](installation.md)
-* [Specification](specification.md)
+* [Specification](specification/README.md)
   * [Merging algorithm](specification/merging-algorithm.md)
   * [Object creation internals](specification/object-creation-internals.md)
 * [FAQ](faq.md)
