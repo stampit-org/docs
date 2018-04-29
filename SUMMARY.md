@@ -21,7 +21,7 @@
 * [Static properties](static-properties.md)
 * [Static deep properties](static-deep-properties.md)
 * [Configuration](configuration.md)
-* [Deep configuration](configuration/deep-configuration.md)
+* [Deep configuration](deep-configuration.md)
 * [Composers](composers.md)
 * [Property descriptors](property-descriptors.md)
 * [Static property descriptors](static-property-descriptors.md)
