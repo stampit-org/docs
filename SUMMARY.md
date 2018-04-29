@@ -12,7 +12,7 @@
 
 ## API
 
-* [Quick start](api/start.md)
+* [Quick start](api/README.md)
 * [Basics](api/basics.md)
 * [Methods](api/methods.md)
 * [Properties](api/properties.md)
