@@ -16,7 +16,7 @@
 * [Basics](basics.md)
 * [Methods](methods.md)
 * [Properties](properties.md)
-* [Deep properties](properties/deep-properties.md)
+* [Deep properties](deep-properties.md)
 * [Initializers](initializers.md)
 * [Static properties](static-properties.md)
 * [Static deep properties](static-properties/static-deep-properties.md)
