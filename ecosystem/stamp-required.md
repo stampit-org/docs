@@ -2,18 +2,19 @@
 
 _Insist on a method/property/staticProperty/configuration presence_
 
-This stamp (aka behavior) will throw if a method (property, staticProperty, configuration, etc) is missing at object creation. 
+This stamp \(aka behavior\) will throw if a method \(property, staticProperty, configuration, etc\) is missing at object creation.
 
 ## Usage
 
-```js
+```javascript
 import Required from '@stamp/required'
 
 const InsistOnRedrawMethod = Required.required({methods: {redraw: Required}})
 ```
 
 Or if you don't want to import the stamp you can import only the method:
-```js
+
+```javascript
 import {required} from '@stamp/required'
 const InsistOnRedrawMethod = required({methods: {redraw: required}})
 ```
@@ -23,13 +24,12 @@ const InsistOnRedrawMethod = required({methods: {redraw: required}})
 ### Static methods
 
 #### required
-Setup which things are required 
-`stamp.required({METATYPE: {KEY: required}}) -> Stamp`
 
+Setup which things are required `stamp.required({METATYPE: {KEY: required}}) -> Stamp`
 
 ## Example
 
-```js
+```javascript
 import stampit from '@stamp/it'
 import Required, {required} from '@stamp/required'
 
@@ -71,3 +71,4 @@ Paladin = Paladin.props({ guild: 'Warriors of Light' })
 
 const paladin = Paladin() // ok
 ```
+

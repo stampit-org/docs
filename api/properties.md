@@ -2,7 +2,7 @@
 
 You can add properties to the objects created from your stamps. These are default properties of your objects.
 
-```js
+```javascript
 const HasLog = stampit({
   props: {
     log: require('bunyan').createLogger({ name: 'my logger' })
@@ -15,7 +15,7 @@ loggerObject.log.debug('I can log')
 
 If you compose the stamp above with any other stamp, then object instances created from it will also have the `.log` property.
 
-```js
+```javascript
 const RequestHandler = stampit(HasLog) // composing with HasLog
 .methods({
   handle(req, res, next) {
@@ -32,7 +32,7 @@ handler.log.debug('Created a handler')
 
 The properties are copied **by assignment**. In other words - **by reference **using `Object.assign`.
 
-```js
+```javascript
 HasLog().log === RequestHandler().log
 ```
 
@@ -42,7 +42,7 @@ In case of conflicts the last composed property wins.
 
 Exactly the same stamp can be created in few ways. Here they all are.
 
-```js
+```javascript
 const myLogger = require('bunyan').createLogger({ name: 'my logger' })
 
 const HasLog = stampit({
@@ -73,6 +73,4 @@ const HasLog = stampit().properties({
   log: myLogger
 })
 ```
-
-
 

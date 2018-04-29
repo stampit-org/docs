@@ -1,8 +1,8 @@
-# Deep Configuration
+# Deep configuration
 
-Deep Configuration is a storage of an arbitrary data in the `.deepConfiguration` metadata of stamp's descriptor. But unlike regular \(shallow\) configuration these are deeply merged together by stamp [deep merging algorithm](/specification/merging-algorithm.md).
+Deep Configuration is a storage of an arbitrary data in the `.deepConfiguration` metadata of stamp's descriptor. But unlike regular \(shallow\) configuration these are deeply merged together by stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md).
 
-```js
+```javascript
 let Kue = stampit.deepConf({
   Kue: {
     name: 'kue',
@@ -26,9 +26,9 @@ MyKue.compose.deepConfiguration.Kue.attempts === 3
 MyKue.compose.deepConfiguration.Kue.priority === 'high'
 ```
 
-You can set deep configuration in [static methods](/static-properties.md):
+You can set deep configuration in [static methods](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties.md):
 
-```js
+```javascript
 Kue = Kue.statics({
   configureKue(options) {
     return this.deepConf({Kue: options}) // create new stamp by composing parent stamp with some configuration
@@ -45,9 +45,9 @@ Kue = Kue.statics({
 const MyRegularJobKue = Kue.attempts(5).delay(1000).ttl(10).events(true).priority('low')
 ```
 
-You can access the configuration in stamp [initializers](/initializers.md) \(aka constructors\).
+You can access the configuration in stamp [initializers](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/initializers.md) \(aka constructors\).
 
-```js
+```javascript
 Kue = Kue.init(function (payload, { stamp }) {
   const conf = stamp.compose.deepConfiguration.Kue
   this.conf = conf
@@ -65,9 +65,9 @@ myKue.put({ title: 'Vasyl Boroviak', email: 'vasyl@example.com', template: 'welc
 
 ## Descriptor merging algorithm
 
-The deepConfiguration is **deeply merged** using stamp [deep merging algorithm](/specification/merging-algorithm.md). See below - the `Kue` value is always a new object.
+The deepConfiguration is **deeply merged** using stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md). See below - the `Kue` value is always a new object.
 
-```js
+```javascript
 Kue.compose.deepConfiguration.Kue !== MyKue.compose.deepConfiguration.Kue // NEVER EQUAL! NO MATTER WHAT!
 ```
 
@@ -75,7 +75,7 @@ Kue.compose.deepConfiguration.Kue !== MyKue.compose.deepConfiguration.Kue // NEV
 
 Exactly the same stamp can be created in few ways. Here they all are.
 
-```js
+```javascript
 const myKueConf = { Kue: { priority: 'normal' } }
 
 const AuthServiceToken = stampit({
@@ -106,6 +106,4 @@ const HasLog = stampit().deepConfiguration({
   Kue: myKueConf
 })
 ```
-
-
 

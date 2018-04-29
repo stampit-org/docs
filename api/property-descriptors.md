@@ -1,8 +1,8 @@
 # Property descriptors
 
-Property descriptors are [standard JavaScript property descriptors](https://mdn.io/defineProperties). They are applied last thing when an object instance is being created. See more info in [stamp internals](/specification/object-creation-internals.md).
+Property descriptors are [standard JavaScript property descriptors](https://mdn.io/defineProperties). They are applied last thing when an object instance is being created. See more info in [stamp internals](../essentials/specification/object-creation-internals.md).
 
-```js
+```javascript
 const Key = stampit.props({
   key: 'my secret key'
 })
@@ -31,7 +31,7 @@ The code above adds some more metadata to the `Key` stamp. It protects the `key`
 
 Exactly the same stamp can be created in few ways. Here they all are.
 
-```js
+```javascript
 const keyPropertyDescriptor = {
   key: {
     configurable: false,
@@ -47,6 +47,4 @@ const FrozenKey = stampit.propertyDescriptors(keyPropertyDescriptor)
 
 const FrozenKey = stampit().propertyDescriptors(keyPropertyDescriptor)
 ```
-
-
 

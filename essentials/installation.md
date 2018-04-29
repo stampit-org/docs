@@ -22,11 +22,11 @@ bower install stampit=https://cdn.jsdelivr.net/npm/stampit@4
 
 Use any of the links above. For example:
 
-```html
+```markup
 <script src="https://cdn.jsdelivr.net/npm/stampit@4"></script>
 ```
 
-The above will automatically install stampit to  `window.stampit`.
+The above will automatically install stampit to `window.stampit`.
 
 In a [WebWorker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) or [ServiceWorker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) stampit would install itself to `self.stampit`.
 
@@ -46,9 +46,7 @@ npm i -S @stamp/it
 
 ### Compatibility note
 
-The `@stamp/it` is compatible with any EcmaScript 5 environment, including Node.js v0.1. However, some of the [Ecosystem](/ecosystem.md) modules are ES6 only.
+The `@stamp/it` is compatible with any EcmaScript 5 environment, including Node.js v0.1. However, some of the [Ecosystem](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/ecosystem.md) modules are ES6 only.
 
 The release notes can be found on the [project page](https://github.com/stampit-org/stamp).
-
-
 

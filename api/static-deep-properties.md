@@ -1,8 +1,8 @@
 # Static deep properties
 
-The static deep properties are properties attached to stamp itself. But unlike regular \(shallow\) static properties these are deeply merged together by stamp [deep merging algorithm](/specification/merging-algorithm.md).
+The static deep properties are properties attached to stamp itself. But unlike regular \(shallow\) static properties these are deeply merged together by stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md).
 
-```js
+```javascript
 const SchemaTypes = stampit.deepStatics({
   Types: {
     String,
@@ -34,15 +34,15 @@ const Schema = stampit(SchemaTypes, ObjectIdSchemaType, { // stamp deep merging 
 
 ## Descriptor merging algorithm
 
-The staticDeepProperties are **deeply merged** using stamp [deep merging algorithm](/specification/merging-algorithm.md). See below - the `Types` value is always a new object.
+The staticDeepProperties are **deeply merged** using stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md). See below - the `Types` value is always a new object.
 
-```js
+```javascript
 SchemaTypes.Types !== Schema.Types // NEVER EQUAL! NO MATTER WHAT!
 ```
 
 Sometimes a regular \(shallow\) static property has the same name as a deep static property. The shallow static property always wins.
 
-```js
+```javascript
 const NullTypes = stampit.statics({
   Types: null
 })
@@ -56,7 +56,7 @@ NoTypesSchema.Types === null // the regular property overwrites deep property
 
 Exactly the same stamp can be created in few ways. Here they all are.
 
-```js
+```javascript
 const myTypes = { String, ID: String, Number, Array }
 
 const AuthServiceToken = stampit({
@@ -87,6 +87,4 @@ const HasLog = stampit().staticDeepProperties({
   Types: myTypes
 })
 ```
-
-
 

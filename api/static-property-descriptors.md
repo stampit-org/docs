@@ -2,7 +2,7 @@
 
 Static property descriptors are [standard JavaScript property descriptors](https://mdn.io/defineProperties). They are applied last thing when an stamp is being composed.
 
-```js
+```javascript
 let MyStamp = stampit() // empty stamp creates empty objects
 
 MyStamp.name === 'Stamp' // every stamp default name is "Stamp"
@@ -18,13 +18,13 @@ The code above adds some more metadata to the `MyStamp` stamp. It overwrites fun
 
 > NOTE
 >
-> Use the [@stamp/named](/stampnamed.md) utility stamp to name your stamps.
+> Use the [@stamp/named](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampnamed.md) utility stamp to name your stamps.
 
 ## Other ways to add static property descriptors
 
 Exactly the same stamp can be created in few ways. Here they all are.
 
-```js
+```javascript
 const myStampName = {
   name: { value: 'MyStamp }
 }
@@ -37,6 +37,4 @@ const NamedStamp = stampit.staticDeepProperties(myStampName)
 
 const NamedStamp = stampit().staticDeepProperties(myStampName)
 ```
-
-
 

@@ -2,26 +2,26 @@
 
 _Controls collision behavior: forbid or defer_
 
-This stamp (aka behavior) will check if there are any conflicts on every `compose` call. 
-Throws an `Error` in case of a forbidden collision or ambiguous setup.
+This stamp \(aka behavior\) will check if there are any conflicts on every `compose` call. Throws an `Error` in case of a forbidden collision or ambiguous setup.
 
 ## Usage
 
-```js
+```javascript
 import Collision from '@stamp/collision';
 
 const ForbidRedrawCollision = Collision.collisionSetup({forbid: ['redraw']});
 ```
 
 Or if you don't want to import the stamp you can import only the method:
-```js
+
+```javascript
 import {collisionSetup} from '@stamp/collision';
 const ForbidRedrawCollision = collisionSetup({forbid: ['redraw']});
 ```
 
-
 The `defer` collects same named methods and wraps them into a single method.
-```js
+
+```javascript
 import Collision from '@stamp/collision';
 
 import {Border, Button, Graph} from './drawable/primitives';
@@ -38,21 +38,22 @@ component.draw(); // will draw() all three primitives
 ### Static methods
 
 #### collisionSetup
-Forbid or Defer an exclusive method
-`stamp.collisionSetup({forbid: ['methodName1'], defer: ['methodName2']}) -> Stamp`
+
+Forbid or Defer an exclusive method `stamp.collisionSetup({forbid: ['methodName1'], defer: ['methodName2']}) -> Stamp`
 
 #### collisionProtectAnyMethod
-Forbid any collisions, excluding those allowed
-`stamp.collisionProtectAnyMethod({allow: ['methoName']}) -> Stamp`
+
+Forbid any collisions, excluding those allowed `stamp.collisionProtectAnyMethod({allow: ['methoName']}) -> Stamp`
 
 #### collisionSettingsReset
-Remove any Collision settings from the stamp
-`stamp.collisionSettingsReset() -> Stamp`
+
+Remove any Collision settings from the stamp `stamp.collisionSettingsReset() -> Stamp`
 
 ## Example
 
 See the comments in the code:
-```js
+
+```javascript
 import compose from '@stamp/compose';
 import Collision from '@stamp/collision';
 import Privatize from '@stamp/privatize';
@@ -107,7 +108,4 @@ expect(Button.compose.methods.draw).toBeCalledWith(42);
 const HaveRedraw = compose({methods: {redraw() {}}})
 expect(() => compose(ModalDialog, HaveRedraw)).toThrow();
 ```
-
-
-
 

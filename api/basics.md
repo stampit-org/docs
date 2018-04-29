@@ -10,9 +10,9 @@ Stampit gives you several ways to create your objects.
 
 ### Pass plain descriptor
 
-You can pass standard [stamp descriptor](/composition.md) to stampit.
+You can pass standard [stamp descriptor](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/composition.md) to stampit.
 
-```js
+```javascript
 const descriptor = {
   methods: ...,
   properties: ...,
@@ -32,7 +32,7 @@ const MyStamp = stampit(descriptor) // passing the descriptor
 
 Or you can pass _sampit-flavoured_ descriptor \(shorter version of the standard descriptor\).
 
-```js
+```javascript
 const shorterDescriptor = {
   methods: ...,
   props: ...,
@@ -54,13 +54,13 @@ const MyStamp = stampit(shorterDescriptor)
 
 Stampit has 18 shortcut functions attached to it. For example:
 
-```js
+```javascript
 const { props, methods, init } = stampit
 ```
 
 You can create stamps from them too.
 
-```js
+```javascript
 const DefaultFoo = props({ foo: null })
 const PrintFoo = methods({ printFoo() { console.log(this.foo) } })
 const PassFoo = init({ foo }) { this.foo = foo })
@@ -70,7 +70,7 @@ const Foo = DefaultFoo.compose(PrintFoo, PassFoo)
 
 The full list of the shortcut functions matches the list of keys you can pass as stamp descriptor \(see above\).
 
-```js
+```javascript
 const {     // destructuring
   methods,
 
@@ -102,7 +102,7 @@ All the examples below create _exactly the same stamp_.
 
 #### Classic way
 
-```js
+```javascript
 const logger = require('bunyan').createLogger({ name: 'log' })
 
 const HasLog = stampit({
@@ -114,7 +114,7 @@ const HasLog = stampit({
 
 #### Classic way using shorter API
 
-```js
+```javascript
 const HasLog = stampit({
   props: {
     log: logger
@@ -124,7 +124,7 @@ const HasLog = stampit({
 
 #### Shortcut way
 
-```js
+```javascript
 const HasLog = stampit.props({
   log: logger
 })
@@ -140,7 +140,7 @@ const HasLog = props({
 
 #### Composition way
 
-```js
+```javascript
 const HasLog = stampit().props({
   log: logger
 })
@@ -150,7 +150,7 @@ const HasLog = stampit().props({
 
 You can chain all the shortcut functions \(see the full list above\).
 
-```js
+```javascript
 const InstanceCounter = stampit()
 .conf({
   instanceCounter: 0 // number of instances of a particular stamp

@@ -1,32 +1,32 @@
-# Stamp merging algorithm
+# Merging algorithm
 
-When composing stamps you actually merge their [descriptors](/descriptor.md) \(aka metadata\).
+When composing stamps you actually merge their [descriptors](../what-is-a-stamp.md) \(aka metadata\).
 
 The `Object.assign` is used for these descriptor properties:
 
-* [methods](/methods.md)
-* [properties](/properties.md)
-* [propertyDescriptors](/property-descriptors.md)
-* [staticProperties](/static-properties.md)
-* [staticPropertyDescriptors](/static-property-descriptors.md)
-* [configuration](/configuration.md)
+* [methods](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/methods.md)
+* [properties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/properties.md)
+* [propertyDescriptors](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/property-descriptors.md)
+* [staticProperties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties.md)
+* [staticPropertyDescriptors](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-property-descriptors.md)
+* [configuration](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/configuration.md)
 
 The special deep merging algorithm \(see below\) is used for these descriptor properties:
 
-* [deepProperties](/properties/deep-properties.md)
-* [staticDeepProperties](/static-properties/static-deep-properties.md)
-* [deepConfiguration](/configuration/deep-configuration.md)
+* [deepProperties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/properties/deep-properties.md)
+* [staticDeepProperties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties/static-deep-properties.md)
+* [deepConfiguration](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/configuration/deep-configuration.md)
 
 The array concatenation and deduplication \(see below\) is used for these descriptor properties:
 
-* [initializers](/initializers.md)
-* [composers](/composers.md)
+* [initializers](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/initializers.md)
+* [composers](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/composers.md)
 
 ## Array concatenation and deduplication
 
 This is how initializers and composers metadata gets merged.
 
-```js
+```javascript
 const _ = require('lodash')
 
 descriptor.initializers = _.uniq(_.concat(descriptor1.initializers, descriptor2.initializers))
@@ -37,14 +37,14 @@ See the [exact line](https://github.com/stampit-org/stamp-specification/blob/8a5
 
 ## Deep merging algorithm
 
-The [stamp specification](/specification.md) standardized the deep merging algorithm to, basically, this:
+The [stamp specification](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md) standardized the deep merging algorithm to, basically, this:
 
 * Plain objects are \(recursively\) deep merged, including ES6 Symbol keys.
 * **Arrays are concatenated**.
 * Functions, Symbols, RegExp, etc. values are copied by reference.
 * The last object type overwrites previous object type.
 
-```js
+```javascript
 const MyStamp1 = stampit()
 
 const deepObject1 = {
@@ -76,7 +76,7 @@ const deepObject2 = {
 
 The merged result of the two objects above will be this:
 
-```js
+```javascript
 const deepResult = {
   [Symbol('foo')]: { one: 'first', two: 'second' }, // contains properties from both objects
 

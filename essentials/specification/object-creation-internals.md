@@ -1,8 +1,8 @@
-# Stamp object creation internals
+# Object creation internals
 
 This is a plain factory function. It creates and returns a plain object.
 
-```js
+```javascript
 function myFactory () {
   return { myProperty: 'my value' }
 }
@@ -10,7 +10,7 @@ function myFactory () {
 
 But Stamps are a little different. They carry around the metadata about the object they are going to produce. The metadata is attached to the `Stamp.compose` object:
 
-```js
+```javascript
 function Stamp () {
   const metadata = Stamp.compose // retrieving metadata from itself
 
@@ -20,9 +20,9 @@ function Stamp () {
 }
 ```
 
-There are 11 [standardized](/specification.md) types of metadata, such as **properties** and **deepProperties**.
+There are 11 [standardized](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md) types of metadata, such as **properties** and **deepProperties**.
 
-```js
+```javascript
 function Stamp () {
   const metadata = Stamp.compose // retrieving metadata from itself
 
@@ -39,7 +39,7 @@ function Stamp () {
 
 There is also **methods** object which becomes the new object's prototype.
 
-```js
+```javascript
 function Stamp () {
   const metadata = Stamp.compose // retrieving metadata from itself
 
@@ -59,7 +59,7 @@ function Stamp () {
 
 The **propertyDescriptors** metadata is an object applied to the resulting object using [`Object.defineProperties`](https://mdn.io/defineProperties) JavaScript standard function.
 
-```js
+```javascript
 function Stamp () {
   const metadata = Stamp.compose // retrieving metadata from itself
 
@@ -81,7 +81,7 @@ function Stamp () {
 
 Last, but not least, the **initializers** are kind of constructors. With classic classes you would execute only one constructor when creating an object. With stamps you **execute **_**all**_** the initializers** of a stamp.
 
-```js
+```javascript
 function Stamp () {
   const metadata = Stamp.compose // retrieving metadata from itself
 
@@ -110,13 +110,9 @@ function Stamp () {
 
 If an initializer returns a non-undefined value then it becomes the new object instance.
 
-See [Stamp Specification](/specification.md) for more details.
+See [Stamp Specification](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md) for more details.
 
 > _NOTE_
 >
 > The code above is not the actual stampit code. It was optimized for readability purposes.
-
-
-
-
 

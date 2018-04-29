@@ -2,7 +2,7 @@
 
 You can add initializers \(aka _constructors_\) to your stamps.
 
-```js
+```javascript
 const Logger = stampit({
   init({level = 50}) {
     this.level = level
@@ -16,7 +16,7 @@ logger.level === 42
 
 **Each initializer will be executed** on object creation. _\(But the list of initializers is always deduplicated.\)_
 
-```js
+```javascript
 const Server = stampit(Logger, {
   init({ port = process.env.PORT }) {
     this.port = port
@@ -31,7 +31,7 @@ server.port === 6666
 
 If you return anything from an initializer then it becomes the object instance.
 
-```js
+```javascript
 const NullServer = Server.init(function () {
   return null
 })
@@ -45,7 +45,7 @@ server === null
 
 The initializers are concatenated into a deduplicated array. As the result, the order of composition becomes **the order of initializer execution**.
 
-```js
+```javascript
 const {init} = stampit
 
 const Log1 = init(() => console.log(1))
@@ -65,7 +65,7 @@ MultiLog.compose.initializers.length === 3
 
 Stamps remove duplicate initializers.
 
-```js
+```javascript
 const {init} = stampit
 
 const func = () => console.log(1)
@@ -92,7 +92,7 @@ MultiLog.compose.initializers.length === 1
 
 You can pass multiple parameters to your stamp while creating an object. First parameter passed as is to all initializers. But the rest of the parameters are available inside the `{args}` property of the second initializer argument.
 
-```js
+```javascript
 const MultiArg = stampit({
   init(arg1, { args }) {
     arg1 === 'foo'
@@ -108,7 +108,7 @@ MultiArg('foo', 'BAR', 'thing')
 
 If there is no first parameter then an empty object is passed as the first argument.
 
-```js
+```javascript
 const NoException = stampit({
   init({ iAmUndefined }) { // won't throw exception in this line
     iAmUndefined === undefined
@@ -125,7 +125,7 @@ Every initializer second argument is always this object: `{ stamp, args, instanc
 * `args` the parameters passed to the stamp while creating the object.
 * `instance` the object instance itself. Always equals `this` context of the initializer.
 
-```js
+```javascript
 const PrintMyArgs = stampit({
   init(_, { stamp, args, instance }) {
     console.log('Creating object from this stamp:', stamp)
@@ -141,7 +141,7 @@ const PrintMyArgs = stampit({
 
 Exactly the same stamp can be created in few ways. Here they all are.
 
-```js
+```javascript
 function myInitializer ({ level = 50 }) {
   this.level = level
 }
@@ -172,6 +172,4 @@ const Logger = stampit().init([myInitializer])
 const Logger = stampit().initializers(myInitializer)
 const Logger = stampit().initializers([myInitializer])
 ```
-
-
 

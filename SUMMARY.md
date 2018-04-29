@@ -1,18 +1,20 @@
-# Summary
+# Table of contents
+
+* [Introduction](README.md)
 
 ## Essentials
 
-* [Overview](README.md)
-* [What is a Stamp](descriptor.md)
-* [Installation](installation.md)
-* [Specification](specification/README.md)
-  * [Merging algorithm](specification/merging-algorithm.md)
-  * [Object creation internals](specification/object-creation-internals.md)
-* [FAQ](faq.md)
+* [Overview](essentials/overview.md)
+* [What is a Stamp](essentials/what-is-a-stamp.md)
+* [Installation](essentials/installation.md)
+* [Specification](essentials/specification/README.md)
+  * [Merging algorithm](essentials/specification/merging-algorithm.md)
+  * [Object creation internals](essentials/specification/object-creation-internals.md)
+* [FAQ](essentials/faq.md)
 
 ## API
 
-* [Quick start](api/README.md)
+* [Quick start](api/quick-start.md)
 * [Basics](api/basics.md)
 * [Methods](api/methods.md)
 * [Properties](api/properties.md)
@@ -28,10 +30,10 @@
 
 ## Ecosystem
 
-* [Ecosystem Overview](ecosystem/README.md)
-* [@stamp/collision](ecosystem/stampcollision.md)
-* [@stamp/required](ecosystem/stamprequired.md)
-* [@stamp/privatize](ecosystem/stampprivatize.md)
-* [@stamp/named](ecosystem/stampnamed.md)
-* [@stamp/instanceof](ecosystem/stampinstanceof.md)
+* [Ecosystem Overview](ecosystem/ecosystem-overview.md)
+* [@stamp/collision](ecosystem/stamp-collision.md)
+* [@stamp/required](ecosystem/stamp-required.md)
+* [@stamp/privatize](ecosystem/stamp-privatize.md)
+* [@stamp/named](ecosystem/stamp-named.md)
+* [@stamp/instanceof](ecosystem/stamp-instanceof.md)
 

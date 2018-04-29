@@ -1,16 +1,16 @@
-# Introduction
+# Overview
 
 ## What is stampit
 
-`stampit` is a JavaScript module which implements the [**stamp** specification](essentials/specification/). **Stamps** are composable factory functions.
+`stampit` is a JavaScript module which implements the [**stamp** specification](https://www.gitbook.com/book/stampit-org/docs/edit#). **Stamps** are composable factory functions.
 
 **Think of **_**stamps**_** as classic classes but without any limits, boundaries, or rules.**
 
 The stamps brag large amount of features and things you can do with your objects and/or stamps.
 
-Head straight to the [Quick Start](api/quick-start.md) page for code examples.
+Head straight to the [Quick Start](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/start.md) page for code examples.
 
-![](.gitbook/assets/class_vs_stamp%20%281%29.png)
+![](../.gitbook/assets/class_vs_stamp.png)
 
 ## Differences from classes
 
@@ -21,7 +21,7 @@ Head straight to the [Quick Start](api/quick-start.md) page for code examples.
   * Stamps
     * Stamp are single object + single prototype. See picture above.
     * When you "extend" you separately merge [methods](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/methods.md), separately merge [properties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/properties.md), separately merge [static properties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties.md), separately merge [initializers](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/initializers.md) \(aka constructors\), etc etc etc.
-    * That's why it is not just inheritance, but special type of object composition. The stamp composition algorithm is [standardized](essentials/specification/merging-algorithm.md).
+    * That's why it is not just inheritance, but special type of object composition. The stamp composition algorithm is [standardized](specification/merging-algorithm.md).
     * You can influence composition result with your code at runtime using the [composers](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/composers.md) feature.
 * Object creation
   * Classes

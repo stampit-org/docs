@@ -1,17 +1,18 @@
 # @stamp/instanceof
 
-_Enables `obj instanceof MyStamp` in ES6 environments_
+_Enables _`obj instanceof MyStamp`_ in ES6 environments_
 
-```js
+```javascript
 const InstanceOf = require('@stamp/InstanceOf');
 // or
 import InstanceOf from '@stamp/InstanceOf';
 ```
 
-### Example
+## Example
 
 Create a stamp:
-```js
+
+```javascript
 let MyStamp = compose({
   properties: { ... },
   initializers: [function () { ... }]
@@ -19,23 +20,26 @@ let MyStamp = compose({
 ```
 
 The following doesn't work:
-```js
+
+```javascript
 const obj = MyStamp();
 obj instanceof MyStamp === false;
 ```
 
 Compose the `InstanceOf` to your stamp:
-```js
+
+```javascript
 MyStamp = MyStamp.compose(InstanceOf);
 ```
 
 Now it works:
-```js
+
+```javascript
 const myObject = MyStamp();
 obj instanceof MyStamp === true;
 ```
 
+## Notes
 
-### Notes
+* We do not recommend to use `instanceof` in JavaScript in general.
 
-- We do not recommend to use `instanceof` in JavaScript in general.

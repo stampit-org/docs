@@ -1,6 +1,8 @@
 # Quick start
 
-[Install](/installation.md) the JavaScript module from the NPM registry.
+## Quick start
+
+[Install](../essentials/installation.md) the JavaScript module from the NPM registry.
 
 ```bash
 npm i @stamp/it
@@ -10,31 +12,31 @@ npm i stampit
 
 Create an empty stamp.
 
-```js
+```javascript
 const stampit = require('@stamp/it')
 
 let Stamp = stampit() // creates new stamp
 ```
 
-[Compose](/composition.md) it with another stamp.
+[Compose](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/composition.md) it with another stamp.
 
-```js
+```javascript
 const HasLog = require('./HasLog')
 
 Stamp = Stamp.compose(HasLog) // creates a new stamp composed from the two
 ```
 
-Add default [properties](/properties.md) to it.
+Add default [properties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/properties.md) to it.
 
-```js
+```javascript
 Stamp = Stamp.props({ // creates a new derived stamp
   S3: require('aws-sdk').S3
 })
 ```
 
-Add a [method](/methods.md).
+Add a [method](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/methods.md).
 
-```js
+```javascript
 Stamp = Stamp.methods({ // creates a new derived stamp
   upload({ fileName, stream }) {
     this.log.info({ fileName }, 'Uploading file') // using the .log property composed in the beginning
@@ -44,9 +46,9 @@ Stamp = Stamp.methods({ // creates a new derived stamp
 })
 ```
 
-Add an [initializer](/initializers.md) \(aka constructor\).
+Add an [initializer](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/initializers.md) \(aka constructor\).
 
-```js
+```javascript
 Stamp = Stamp.init(function ({ bucket }, { stamp }) {
   this.s3instance = new this.S3({ 
     apiVersion: '2006-03-01', 
@@ -55,17 +57,17 @@ Stamp = Stamp.init(function ({ bucket }, { stamp }) {
 })
 ```
 
-Add a [configuration](/configuration.md).
+Add a [configuration](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/configuration.md).
 
-```js
+```javascript
 Stamp = Stamp.conf({
   bucket: process.env.UPLOAD_BUCKET
 })
 ```
 
-Add a [static](/static-properties.md) method.
+Add a [static](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties.md) method.
 
-```js
+```javascript
 Stamp = Stamp.statics({
   setDefaultBucket(bucket) {
     return this.conf({ bucket })
@@ -73,9 +75,9 @@ Stamp = Stamp.statics({
 })
 ```
 
-Make the `.s3instance` , `.log`, and `.S3` properties [private](/stampprivatize.md).
+Make the `.s3instance` , `.log`, and `.S3` properties [private](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampprivatize.md).
 
-```js
+```javascript
 const Privatize = require('@stamp/privatize')
 
 Stamp = Stamp.compose(Privatize)
@@ -83,15 +85,15 @@ Stamp = Stamp.compose(Privatize)
 
 Give it a proper name.
 
-```js
+```javascript
 const FileStore = Stamp
 ```
 
-## Using the stamp
+### Using the stamp
 
 Use your stamp ad-hoc.
 
-```js
+```javascript
 async function uploadTo(req, res) {
   const fileStore = FileStore({ bucket: req.params.bucket }) // create instance
 
@@ -103,7 +105,7 @@ async function uploadTo(req, res) {
 
 Or preconfigure it.
 
-```js
+```javascript
 const CatGifStore = FileStore.setDefaultBucket('cat-gifs') // pre-configuring the bucket name
 
 const catGifStore = CatGifStore() // create an instance of the store
@@ -113,7 +115,7 @@ await catGifStore.upload({ fileName: 'cat.gif', stream: readableStream })
 
 If you want to silence the shameful fact that you are collecting cat gifs then here is how you disable log. Just overwrite the `log` property with a silent one.
 
-```js
+```javascript
 const SilentCatGifStore = CatGifStore.props({
   log: {
     info() {} // silence!
@@ -125,21 +127,21 @@ await SilentCatGifStore().upload({ fileName: 'cat.gif', stream: readableStream }
 
 The `new` keyword also works with any stamp.
 
-```js
+```javascript
 const catGifStore = new CatGifStore()
 ```
 
 Another way to create an object is to use `.create()` static method.
 
-```js
+```javascript
 const catGifStore = CatGifStore.create()
 ```
 
-## Shorter API
+### Shorter API
 
 Here is the same `FileStore` stamp but written in a more concise way.
 
-```js
+```javascript
 const HasLog = require('./HasLog')
 const Privatize = require('@stamp/privatize')
 
@@ -170,11 +172,11 @@ const FileStore = HasLog.compose(Privatize, {
 })
 ```
 
-# Mocking I/O in unit tests
+## Mocking I/O in unit tests
 
 Replacing actual `S3` with a fake one.
 
-```js
+```javascript
 const MockedFileStore = FileStore.props({
   S3() {
     return {
@@ -185,7 +187,7 @@ const MockedFileStore = FileStore.props({
 })
 ```
 
-# Basic API
+## Basic API
 
-Head to the [Basics](/basics.md) page.
+Head to the [Basics](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/basics.md) page.
 

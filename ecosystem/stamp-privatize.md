@@ -4,12 +4,13 @@ _Makes all properties and optional methods private_
 
 Inspired by the [`private-class`](https://github.com/parro-it/private-class) module. **NOTE!** Requires WeakMap, thus won't work in IE10.
 
-This stamp (aka behavior) will create a proxy object. Its methods would delegate all the calls to the original object instance.
+This stamp \(aka behavior\) will create a proxy object. Its methods would delegate all the calls to the original object instance.
 
 All the properties are made private. Methods privatization is optional and can be done via the `privatizeMethods` static function.
 
 ## Usage
-```js
+
+```javascript
 import Privatize from '@stamp/privatize';
 
 import Auth from './stamps/auth';
@@ -20,14 +21,17 @@ const AuthWithPrivatePropertiesAndMethod = Auth.compose(Privatize).privatizeMeth
 ```
 
 Or if you don't want to import the stamp you can import only the method:
-```js
+
+```javascript
 import {privatizeMethods} from '@stamp/privatize';
 const AuthWithPrivatePropertiesAndMethod = Auth.compose(privatizeMethods('setPassword'));
 ```
 
 ## Warning!
+
 Every property you assign in the initializers will be private.
-```js
+
+```javascript
 const Original = compose({
   initializers: function () {
     this.foo = 42; // THIS WILL BE PRIVATE
@@ -35,12 +39,14 @@ const Original = compose({
   }
 });
 Original().foo === undefined; 
-Original().bar === undefined; 
+Original().bar === undefined;
 ```
+
 This is a neat feature since you don't need to use JS closures to hide variables from external users.
 
 ## Example
-```js
+
+```javascript
 let accessPassword, accessSetPassword;
 const Original = compose({
   properties: {password: '123'},
@@ -69,9 +75,9 @@ expect(accessSetPassword).toBe(Original.compose.methods.setPassword);
 
 ## Smart use of configuration
 
-If you ever was thinking how cool if it was having `configuration` (and `deepConfiguration`) accessible in your method without explicitly exposing it through initializer, with privatize stamp you can simply do this. First make your own extension to Private stamp.
+If you ever was thinking how cool if it was having `configuration` \(and `deepConfiguration`\) accessible in your method without explicitly exposing it through initializer, with privatize stamp you can simply do this. First make your own extension to Private stamp.
 
-```js
+```javascript
 import Privatize from '@stamp/privatize';
 const ConfiguredPrivatize = Privatize.compose({
   initializers: [(_, {stamp, instance}) => {
@@ -84,7 +90,7 @@ export default ConfiguredPrivatize;
 
 Then you can use for your other stamps and being able to access configuration within any method while still have it hidden from public sight.
 
-```js
+```javascript
 compose(ConfiguredPrivatize, {
     configuration: {
         secret: 'mykey'
@@ -97,3 +103,4 @@ compose(ConfiguredPrivatize, {
     }
 })
 ```
+

@@ -1,8 +1,8 @@
-# Deep Properties
+# Deep properties
 
-The deep properties add properties to the objects created from your stamps. These are default properties of your objects. But unlike regular \(shallow\) properties these are deeply merged together by stamp [deep merging algorithm](/specification/merging-algorithm.md).
+The deep properties add properties to the objects created from your stamps. These are default properties of your objects. But unlike regular \(shallow\) properties these are deeply merged together by stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md).
 
-```js
+```javascript
 const AuthServiceToken = stampit.deepProps({
   Secrets: {
     authServiceToken: process.env.AUTH_SERVICE_TOKEN
@@ -27,15 +27,15 @@ DefaultSecrets().Secrets.S3.secret === process.env.AWS_SECRET_ACCESS_KEY
 
 ## Descriptor merging algorithm
 
-The deepProperties are **deeply merged** using stamp [deep merging algorithm](/specification/merging-algorithm.md). See below - the `Secrets` value is always a new object.
+The deepProperties are **deeply merged** using stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md). See below - the `Secrets` value is always a new object.
 
-```js
+```javascript
 S3KeyIdAndSecret().Secrets !== DefaultSecrets().Secrets // NEVER EQUAL! NO MATTER WHAT!
 ```
 
-Sometimes a regular \(shallow\) property has the same name as a deep property. While creating an object instance the shallow property wins. See [stamp internals](/specification/object-creation-internals.md).
+Sometimes a regular \(shallow\) property has the same name as a deep property. While creating an object instance the shallow property wins. See [stamp internals](../essentials/specification/object-creation-internals.md).
 
-```js
+```javascript
 const NullSecrets = stampit.props({
   Secrets: null
 })
@@ -55,7 +55,7 @@ Result().Secrets === null // the regular property overwrites deep property while
 
 Exactly the same stamp can be created in few ways. Here they all are.
 
-```js
+```javascript
 const mySecrets = { authServiceToken: process.env.AUTH_SERVICE_TOKEN }
 
 const AuthServiceToken = stampit({
@@ -86,6 +86,4 @@ const HasLog = stampit().deepProperties({
   Secrets: mySecrets
 })
 ```
-
-
 

@@ -6,7 +6,7 @@ Composers are callback functions executed each time a composition happens. There
 
 It is highly recommended to **not create new stamps** in the composers, but **mutate the given stamp** if necessary.
 
-```js
+```javascript
 const InstanceOf = stampit.composers(({ stamp, composables }) => {
   if (!stamp.compose.methods) stamp.compose.methods = {} // mutating stamp
   stamp.compose.methods.getStamp = () => stamp           // mutating stamp
@@ -33,13 +33,13 @@ The above `InstanceOf` stamp overrides the default `instanceof` behavior using E
 
 > NOTE
 >
-> You can find the stamp above as the [`@stamp/instanceof`](/stampinstanceof.md) NPM module.
+> You can find the stamp above as the [`@stamp/instanceof`](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampinstanceof.md) NPM module.
 
 ## Descriptor merging algorithm
 
 The composers are concatenated into a deduplicated array. As the result, the order of composition becomes **the order of composer execution**.
 
-```js
+```javascript
 const {composers} = stampit
 
 const Log1 = composers(() => console.log(1))
@@ -59,7 +59,7 @@ MultiLog.compose.composers.length === 3
 
 Stamps remove duplicate composers.
 
-```js
+```javascript
 const {composers} = stampit
 
 const func = () => console.log(1)
@@ -87,7 +87,7 @@ Every composer always receive this object: `{ stamp, composables }`. Where:
 
 Exactly the same stamp can be created in few ways. Here they all are.
 
-```js
+```javascript
 function myDebugComposer ({ stamp, composables }) {
   console.log(`Stamp ${stamp} was composed of ${composables}`)
 }
@@ -106,6 +106,4 @@ const Logger = stampit.composers([myDebugComposer])
 const Logger = stampit().composers(myDebugComposer)
 const Logger = stampit().composers([myDebugComposer])
 ```
-
-
 
