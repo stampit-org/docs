@@ -8,7 +8,7 @@
 
 The stamps brag large amount of features and things you can do with your objects and/or stamps.
 
-Head straight to the [Quick Start](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/start.md) page for code examples.
+Head straight to the [Quick Start](../api/quick-start.md) page for code examples.
 
 ![](../.gitbook/assets/class_vs_stamp.png)
 
