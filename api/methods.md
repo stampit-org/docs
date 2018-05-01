@@ -22,7 +22,7 @@ All the methods are **attached to object's prototype**.
 logger.__proto__.debug === Logger.compose.methods.debug
 ```
 
-Moreover, the entire `methods` [descriptor metadata](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/composition.md) becomes the prototype.
+Moreover, the entire `methods` [descriptor metadata](../essentials/what-is-a-stamp.md#stamps-metadata-descriptor) becomes the prototype.
 
 ```javascript
 logger.__proto__ === Logger.compose.methods
@@ -53,11 +53,11 @@ The methods are copied **by assignment**. In other words - **by reference **usin
 Logger().debug === Server().debug
 ```
 
-In case of conflicts the last composed method wins. To avoid method collision use the [@stamp/collision](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampcollision.md) stamp. To make sure a method is implemented use the [@stamp/required](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stamprequired.md) stamp.
+In case of conflicts the last composed method wins. To avoid method collision use the [@stamp/collision](../ecosystem/stamp-collision.md) stamp. To make sure a method is implemented use the [@stamp/required](../ecosystem/stamp-required.md) stamp.
 
 > _NOTE_
 >
-> When using the [@stamp/required](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stamprequired.md) stamp it creates a proxy object and returns from the factory. This means that `logger.__proto__ === Logger.compose.methods` or `logger.__proto__.debug === Logger.compose.methods.debug` will no longer be `true`.
+> When using the [@stamp/required](../ecosystem/stamp-required.md) stamp it creates a proxy object and returns from the factory. This means that `logger.__proto__ === Logger.compose.methods` or `logger.__proto__.debug === Logger.compose.methods.debug` will no longer be `true`.
 
 ## Other ways to add methods
 
