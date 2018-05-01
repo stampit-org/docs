@@ -6,7 +6,7 @@ Stamp is a **composable** factory function.
 >
 > Factory functions create and return new objects.
 
-Go to [API Quick start](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/start.md) to learn how to create a Stamp.
+Go to [API Quick start](../api/quick-start.md) to learn how to create a Stamp.
 
 ```javascript
 const object = Stamp() // creating a new object from a stamp
@@ -20,7 +20,7 @@ But unlike plain functions, Stamps carry around the metadata about the object th
 const descriptor = Stamp.compose // retrieving a stamp's metadata
 ```
 
-There are 11 [standardized](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md) types of metadata:
+There are 11 [standardized](specification/) types of metadata:
 
 ```typescript
 interface Descriptor {
@@ -73,7 +73,7 @@ const ComposedStamp = Stamp1.compose(Stamp2.compose(Stamp3))
 const ComposedStamp = stampit().compose(Stamp1, Stamp2, Stamp3)
 ```
 
-The `stampit` and `.compose` functions are doing only one thing: **merge stamp descriptors according to the **[**stamp specification**](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md).
+The `stampit` and `.compose` functions are doing only one thing: **merge stamp descriptors according to the **[**stamp specification**](specification/).
 
 > _NOTE_
 >
@@ -98,13 +98,13 @@ This behaviour is **by design**.
 
 > NOTE
 >
-> If you really need to make sure none overwrites your method you can use [@stamp/collision](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampcollision.md) stamp. Compose it into your stamp. However, in our practice stamps tend to stay quite small, so that conflict resolution is never needed.
+> If you really need to make sure none overwrites your method you can use [@stamp/collision](../ecosystem/stamp-collision.md) stamp. Compose it into your stamp. However, in our practice stamps tend to stay quite small, so that conflict resolution is never needed.
 
 ## Creating stamps
 
 To create a new stamp from scratch you would need to use one of the JavaScript modules available:
 
-* [`@stamp/compose`](https://www.npmjs.com/package/@stamp/compose) - the [**standardized compose function**](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md)
+* [`@stamp/compose`](https://www.npmjs.com/package/@stamp/compose) - the [**standardized compose function**](specification/)
 * [`@stamp/it`](https://www.npmjs.com/package/@stamp/it) - the same as the compose function above, but provides some additional nicer API
 * [`stampit`](https://www.npmjs.com/package/stampit) - the same as the `@stamp/it` above, but optimized for browsers
 
@@ -132,5 +132,5 @@ compose({ props: { myProperty: 'my value' } }) // WRONG! YOU MUST USE FULL `prop
 
 > NOTE
 >
-> The stampit nicer API is nothing else but few additional [static methods](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties.md) in your stamps. That's it.
+> The stampit nicer API is nothing else but few additional [static methods](../api/static-properties.md) in your stamps. That's it.
 
