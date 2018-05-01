@@ -4,23 +4,23 @@ When composing stamps you actually merge their [descriptors](../what-is-a-stamp.
 
 The `Object.assign` is used for these descriptor properties:
 
-* [methods](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/methods.md)
-* [properties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/properties.md)
-* [propertyDescriptors](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/property-descriptors.md)
-* [staticProperties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties.md)
-* [staticPropertyDescriptors](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-property-descriptors.md)
-* [configuration](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/configuration.md)
+* [methods](../../api/methods.md)
+* [properties](../../api/properties.md)
+* [propertyDescriptors](../../api/property-descriptors.md)
+* [staticProperties](../../api/static-properties.md)
+* [staticPropertyDescriptors](../../api/static-property-descriptors.md)
+* [configuration](../../api/configuration.md)
 
 The special deep merging algorithm \(see below\) is used for these descriptor properties:
 
-* [deepProperties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/properties/deep-properties.md)
-* [staticDeepProperties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties/static-deep-properties.md)
-* [deepConfiguration](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/configuration/deep-configuration.md)
+* [deepProperties](../../api/deep-properties.md)
+* [staticDeepProperties](../../api/static-deep-properties.md)
+* [deepConfiguration](../../api/deep-configuration.md)
 
 The array concatenation and deduplication \(see below\) is used for these descriptor properties:
 
-* [initializers](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/initializers.md)
-* [composers](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/composers.md)
+* [initializers](../../api/initializers.md)
+* [composers](../../api/composers.md)
 
 ## Array concatenation and deduplication
 
@@ -37,7 +37,7 @@ See the [exact line](https://github.com/stampit-org/stamp-specification/blob/8a5
 
 ## Deep merging algorithm
 
-The [stamp specification](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md) standardized the deep merging algorithm to, basically, this:
+The [stamp specification](./) standardized the deep merging algorithm to, basically, this:
 
 * Plain objects are \(recursively\) deep merged, including ES6 Symbol keys.
 * **Arrays are concatenated**.
@@ -91,5 +91,5 @@ const deepResult = {
 }
 ```
 
-See the [exact line](https://github.com/stampit-org/stamp-specification/blob/master/compose.js#L70) of the reference implementation source code.
+See the [exact line](https://github.com/stampit-org/stamp-specification/blob/8a5448806da286b2f840c33cb618ddbcdb40182d/compose.js#L70) of the reference implementation source code.
 
