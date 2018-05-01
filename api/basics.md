@@ -10,7 +10,7 @@ Stampit gives you several ways to create your objects.
 
 ### Pass plain descriptor
 
-You can pass standard [stamp descriptor](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/composition.md) to stampit.
+You can pass standard [stamp descriptor](../essentials/what-is-a-stamp.md#stamps-metadata-descriptor) to stampit.
 
 ```javascript
 const descriptor = {
@@ -150,10 +150,12 @@ const HasLog = stampit().props({
 
 You can chain all the shortcut functions \(see the full list above\).
 
+{% code-tabs %}
+{% code-tabs-item title="InstanceCounter.js" %}
 ```javascript
 const InstanceCounter = stampit()
 .conf({
-  instanceCounter: 0 // number of instances of a particular stamp
+  instanceCounter: 0 // number of instances of a particular stamp, incremental
 })
 .props({
   instanceIndex: -1 // an instance number, incremental
@@ -164,10 +166,10 @@ const InstanceCounter = stampit()
   } 
 })
 .init(function ({ foo }, { stamp }) {
-  this.instanceIndex = stamp.compose.configuration.instanceCounter // assign instance number
+  this.instanceIndex = stamp.compose.configuration.instanceCounter // instance number
   stamp.compose.configuration.instanceCounter += 1 // increment the counter
 })
-.staticPropertyDescriptors({ // give the Stamp.name a non-default name. Works in ES6 only.
+.staticPropertyDescriptors({ // give the Stamp.name a non-default name. ES6 only.
   name: { value: 'InstanceCounter' }
 })
 .statics({ 
@@ -180,6 +182,8 @@ const InstanceCounter = stampit()
   stamp.compose.configuration.instanceCounter = 0
 })
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 The stamp above is a utility stamp. If you compose it to any of your stamps it will _count the number of object instances_ created from your stamp.
 
