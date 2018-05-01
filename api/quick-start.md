@@ -18,7 +18,7 @@ const stampit = require('@stamp/it')
 let Stamp = stampit() // creates new stamp
 ```
 
-Compose it with another stamp.
+[Compose](../essentials/what-is-a-stamp.md#composing-stamps) it with another stamp.
 
 ```javascript
 const HasLog = require('./HasLog')
@@ -26,7 +26,7 @@ const HasLog = require('./HasLog')
 Stamp = Stamp.compose(HasLog) // creates a new stamp composed from the two
 ```
 
-Add default [properties](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/properties.md) to it.
+Add default [properties](properties.md) to it.
 
 ```javascript
 Stamp = Stamp.props({ // creates a new derived stamp
@@ -34,7 +34,7 @@ Stamp = Stamp.props({ // creates a new derived stamp
 })
 ```
 
-Add a [method](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/methods.md).
+Add a [method](methods.md).
 
 ```javascript
 Stamp = Stamp.methods({ // creates a new derived stamp
@@ -46,7 +46,7 @@ Stamp = Stamp.methods({ // creates a new derived stamp
 })
 ```
 
-Add an [initializer](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/initializers.md) \(aka constructor\).
+Add an [initializer](initializers.md) \(aka constructor\).
 
 ```javascript
 Stamp = Stamp.init(function ({ bucket }, { stamp }) {
@@ -57,7 +57,7 @@ Stamp = Stamp.init(function ({ bucket }, { stamp }) {
 })
 ```
 
-Add a [configuration](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/configuration.md).
+Add a [configuration](configuration.md).
 
 ```javascript
 Stamp = Stamp.conf({
@@ -65,7 +65,7 @@ Stamp = Stamp.conf({
 })
 ```
 
-Add a [static](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties.md) method.
+Add a [static](static-properties.md) method.
 
 ```javascript
 Stamp = Stamp.statics({
@@ -75,7 +75,7 @@ Stamp = Stamp.statics({
 })
 ```
 
-Make the `.s3instance` , `.log`, and `.S3` properties [private](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampprivatize.md).
+Make the `.s3instance` , `.log`, and `.S3` properties [private](../ecosystem/stamp-privatize.md).
 
 ```javascript
 const Privatize = require('@stamp/privatize')
@@ -189,5 +189,5 @@ const MockedFileStore = FileStore.props({
 
 ## Basic API
 
-Head to the [Basics](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/basics.md) page.
+Head to the [Basics](basics.md) page.
 
