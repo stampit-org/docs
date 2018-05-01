@@ -1,6 +1,6 @@
 # Deep properties
 
-The deep properties add properties to the objects created from your stamps. These are default properties of your objects. But unlike regular \(shallow\) properties these are deeply merged together by stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md).
+The deep properties add properties to the objects created from your stamps. These are default properties of your objects. But unlike regular \(shallow\) properties these are deeply merged together by stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md#deep-merging-algorithm).
 
 ```javascript
 const AuthServiceToken = stampit.deepProps({
@@ -27,7 +27,7 @@ DefaultSecrets().Secrets.S3.secret === process.env.AWS_SECRET_ACCESS_KEY
 
 ## Descriptor merging algorithm
 
-The deepProperties are **deeply merged** using stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md). See below - the `Secrets` value is always a new object.
+The deepProperties are **deeply merged** using stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md#deep-merging-algorithm). See below - the `Secrets` value is always a new object.
 
 ```javascript
 S3KeyIdAndSecret().Secrets !== DefaultSecrets().Secrets // NEVER EQUAL! NO MATTER WHAT!
