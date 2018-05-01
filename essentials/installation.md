@@ -46,7 +46,7 @@ npm i -S @stamp/it
 
 ### Compatibility note
 
-The `@stamp/it` is compatible with any EcmaScript 5 environment, including Node.js v0.1. However, some of the [Ecosystem](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/ecosystem.md) modules are ES6 only.
+The `@stamp/it` is compatible with any EcmaScript 5 environment, including Node.js v0.1. However, some of the [Ecosystem](../ecosystem/ecosystem-overview.md) modules are ES6 only.
 
 The release notes can be found on the [project page](https://github.com/stampit-org/stamp).
 
