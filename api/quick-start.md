@@ -18,7 +18,7 @@ const stampit = require('@stamp/it')
 let Stamp = stampit() // creates new stamp
 ```
 
-[Compose](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/composition.md) it with another stamp.
+Compose it with another stamp.
 
 ```javascript
 const HasLog = require('./HasLog')
