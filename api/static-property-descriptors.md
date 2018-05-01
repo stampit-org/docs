@@ -18,7 +18,7 @@ The code above adds some more metadata to the `MyStamp` stamp. It overwrites fun
 
 > NOTE
 >
-> Use the [@stamp/named](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampnamed.md) utility stamp to name your stamps.
+> Use the [@stamp/named](../ecosystem/stamp-named.md) utility stamp to name your stamps.
 
 ## Other ways to add static property descriptors
 
