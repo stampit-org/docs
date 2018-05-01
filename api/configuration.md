@@ -12,7 +12,7 @@ let HaveApiKey = stampit({
 HaveApiKey.compose.configuration.apiKey === process.env.API_KEY
 ```
 
-You can set configuration in [static methods](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/static-properties.md):
+You can set configuration in [static methods](static-properties.md):
 
 ```javascript
 HaveApiKey = HaveApiKey.statics({
@@ -26,7 +26,7 @@ HaveApiKey = HaveApiKey.setApiKey('abcd1234')
 HaveApiKey.compose.configuration.apiKey === 'abcd1234'
 ```
 
-You can access the configuration in stamp [initializers](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/initializers.md) \(aka constructors\).
+You can access the configuration in stamp [initializers](initializers.md) \(aka constructors\).
 
 ```javascript
 const ApiKeyPrinter = HaveApiKey.init(function (opts, { stamp }) {
