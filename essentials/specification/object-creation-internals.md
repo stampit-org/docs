@@ -20,7 +20,7 @@ function Stamp () {
 }
 ```
 
-There are 11 [standardized](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md) types of metadata, such as **properties** and **deepProperties**.
+There are 11 [standardized](./) types of metadata, such as **properties** and **deepProperties**.
 
 ```javascript
 function Stamp () {
@@ -110,7 +110,7 @@ function Stamp () {
 
 If an initializer returns a non-undefined value then it becomes the new object instance.
 
-See [Stamp Specification](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/specification.md) for more details.
+See [Stamp Specification](./) for more details.
 
 > _NOTE_
 >
