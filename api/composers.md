@@ -33,7 +33,7 @@ The above `InstanceOf` stamp overrides the default `instanceof` behavior using E
 
 > NOTE
 >
-> You can find the stamp above as the [`@stamp/instanceof`](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampinstanceof.md) NPM module.
+> You can find the stamp above as the [`@stamp/instanceof`](../ecosystem/stamp-instanceof.md) NPM module.
 
 ## Descriptor merging algorithm
 
