@@ -6,9 +6,9 @@ The last composed property/method/etc wins. In other words, you can overwrite ev
 
 ## Q: But what if there are names conflicts during stamp composition?
 
-In our practice name collisions never happen. Because stamps tend to stay very small thanks to its absolute freedom. In our practice the names never collide.
+In our practice the names never collide. Because stamps tend to stay very small thanks to its absolute freedom.
 
-But if you still need to avoid name collision or protect a method from overwriting then use [@stamp/collision](https://github.com/stampit-org/docs/tree/cb1b11dcef3e3b0b3aa5212adcf9047a2f882b06/stampcollision.md) utility stamp.
+But if you still need to avoid name collision or protect a method from overwriting then use [@stamp/collision](../ecosystem/stamp-collision.md) utility stamp.
 
 ## Q: Why stampit is ES5? Should it be ES6 or later?
 
