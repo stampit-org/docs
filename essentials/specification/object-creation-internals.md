@@ -45,7 +45,7 @@ function Stamp () {
 
   const properties = metadata.properties // retrieving properties from the metadata
   let deepProperties = metadata.deepProperties // retrieving deepProperties from the metadata
-  deepProperties = JSON.parse(JSON.stringify(deepProperties)) // we need to clone deepProperties
+  deepProperties = _.cloneDeep(deepProperties) // we need to clone deepProperties
   const newObject = Object.assign({}, deepProperties, properties) // creating new object using the properties
 
   const methods = metadata.methods // retrieving methods from the metadata
