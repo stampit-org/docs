@@ -4,7 +4,7 @@
 
 `stampit` is a JavaScript module which implements the stamp [specification](essentials/specification/). **Stamps** are composable factory functions.
 
-**Think of **_**stamps**_** as classic classes but without any limits, boundaries, or rules.**
+**Think of** _**stamps**_ **as classic classes but without any limits, boundaries, or rules.**
 
 The stamps brag large amount of features and things you can do with your objects and/or stamps.
 

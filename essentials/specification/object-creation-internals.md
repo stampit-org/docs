@@ -79,7 +79,7 @@ function Stamp () {
 }
 ```
 
-Last, but not least, the **initializers** are kind of constructors. With classic classes you would execute only one constructor when creating an object. With stamps you **execute **_**all**_** the initializers** of a stamp.
+Last, but not least, the **initializers** are kind of constructors. With classic classes you would execute only one constructor when creating an object. With stamps you **execute** _**all**_ **the initializers** of a stamp.
 
 ```javascript
 function Stamp () {

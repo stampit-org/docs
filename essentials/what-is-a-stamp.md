@@ -73,7 +73,7 @@ const ComposedStamp = Stamp1.compose(Stamp2.compose(Stamp3))
 const ComposedStamp = stampit().compose(Stamp1, Stamp2, Stamp3)
 ```
 
-The `stampit` and `.compose` functions are doing only one thing: **merge stamp descriptors according to the **[**stamp specification**](specification/).
+The `stampit` and `.compose` functions are doing only one thing: **merge stamp descriptors according to the** [**stamp specification**](specification/).
 
 > _NOTE_
 >

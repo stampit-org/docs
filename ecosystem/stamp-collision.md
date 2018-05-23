@@ -30,8 +30,11 @@ const UiComponent = Collision.collisionSetup({defer: ['draw']})
 .compose(Border, Button, Graph);
 
 const component = UiComponent();
-component.draw(); // will draw() all three primitives
+const results = component.draw(); // will draw() all three primitives
+console.log(results.length); // prints "3" to the console.
 ```
+
+The deferred method returns the array of the values your methods returned. In the example above the `results` array will have the values the `.draw()` methods returned.
 
 ## API
 

@@ -1,6 +1,6 @@
 # @stamp/instanceof
 
-_Enables _`obj instanceof MyStamp`_ in ES6 environments_
+_Enables_ `obj instanceof MyStamp` _in ES6 environments_
 
 ```javascript
 const InstanceOf = require('@stamp/InstanceOf');

@@ -2,7 +2,7 @@
 
 ## @stamp/named
 
-_Changes the _`Stamp.name`_ property using the _[_new ES6 feature_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name)_._
+_Changes the_ `Stamp.name` _property using the_ [_new ES6 feature_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name)_._
 
 Supported platforms: node&gt;=4, iOS&gt;=10, Edge, FF, Chrome, Safari
 

@@ -30,7 +30,7 @@ handler.log.debug('Created a handler')
 
 ## Descriptor merging algorithm
 
-The properties are copied **by assignment**. In other words - **by reference **using `Object.assign`.
+The properties are copied **by assignment**. In other words - **by reference** using `Object.assign`.
 
 ```javascript
 HasLog().log === RequestHandler().log

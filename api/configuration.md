@@ -40,7 +40,7 @@ HaveApiKey() // this will execute the initializer, and will print "abcd1234" to 
 
 ## Descriptor merging algorithm
 
-The configuration properties are copied **by assignment**. In other words - **by reference **using `Object.assign`.
+The configuration properties are copied **by assignment**. In other words - **by reference** using `Object.assign`.
 
 ```javascript
 HaveApiKey.compose.configuration.apiKey === ApiKeyPrinter.compose.configuration.apiKey

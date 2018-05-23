@@ -67,7 +67,7 @@ instance.getFactor() === 5 // the factor was set
 
 ## Descriptor merging algorithm
 
-The static properties are copied **by assignment**. In other words - **by reference **using `Object.assign`.
+The static properties are copied **by assignment**. In other words - **by reference** using `Object.assign`.
 
 ```javascript
 HasFactor.allowFactorSetter === HasFactorAllowed.allowFactorSetter

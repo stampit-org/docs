@@ -47,7 +47,7 @@ server.start()
 
 ## Descriptor merging algorithm
 
-The methods are copied **by assignment**. In other words - **by reference **using `Object.assign`.
+The methods are copied **by assignment**. In other words - **by reference** using `Object.assign`.
 
 ```javascript
 Logger().debug === Server().debug
