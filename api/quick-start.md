@@ -185,6 +185,12 @@ const MockedFileStore = FileStore.props({
       }
   }
 })
+
+// Same as above but a one-liner:
+
+const MockedFileStore = FileStore.props({
+  S3: () => ({ upload: () => ({ async promise() {} }) })
+})
 ```
 
 ## Basic API
