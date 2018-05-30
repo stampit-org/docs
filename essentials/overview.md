@@ -10,7 +10,11 @@ The stamps brag large amount of features and things you can do with your objects
 
 Head straight to the [Quick Start](../api/quick-start.md) page for code examples.
 
-![](../.gitbook/assets/class_vs_stamp.png)
+![Object instances created from classes vs stamps.](../.gitbook/assets/class_vs_stamp.png)
+
+
+
+
 
 ## Differences from classes
 
