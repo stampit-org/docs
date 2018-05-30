@@ -12,10 +12,6 @@ Head straight to the [Quick Start](../api/quick-start.md) page for code examples
 
 ![Object instances created from classes vs stamps.](../.gitbook/assets/class_vs_stamp.png)
 
-
-
-
-
 ## Differences from classes
 
 * Inheritance
