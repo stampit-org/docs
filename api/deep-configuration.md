@@ -65,10 +65,13 @@ myKue.put({ title: 'Vasyl Boroviak', email: 'vasyl@example.com', template: 'welc
 
 ## Descriptor merging algorithm
 
-The deepConfiguration is **deeply merged** using stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md#deep-merging-algorithm). See below - the `Kue` value is always a new object.
+The deepConfiguration is **deeply merged** using stamp [deep merging algorithm](../essentials/specification/merging-algorithm.md#deep-merging-algorithm).
+
+See below - the `Kue` value is always a new object.
 
 ```javascript
-Kue.compose.deepConfiguration.Kue !== MyKue.compose.deepConfiguration.Kue // NEVER EQUAL! NO MATTER WHAT!
+Kue.compose.deepConfiguration.Kue !== MyKue.compose.deepConfiguration.Kue
+// NEVER EQUAL! NO MATTER WHAT!
 ```
 
 ## Other ways to add deep configuration
@@ -78,31 +81,31 @@ Exactly the same stamp can be created in few ways. Here they all are.
 ```javascript
 const myKueConf = { Kue: { priority: 'normal' } }
 
-const AuthServiceToken = stampit({
+const MyKue = stampit({
   deepConf: {
     Kue: myKueConf
   }
 })
 
-const HasLog = stampit({
+const MyKue = stampit({
   deepConfiguration: {
     Kue: myKueConf
   }
 })
 
-const HasLog = stampit.deepConf({
+const MyKue = stampit.deepConf({
   Kue: myKueConf
 })
 
-const HasLog = stampit.deepConfiguration({
+const MyKue = stampit.deepConfiguration({
   Kue: myKueConf
 })
 
-const HasLog = stampit().deepConf({
+const MyKue = stampit().deepConf({
   Kue: myKueConf
 })
 
-const HasLog = stampit().deepConfiguration({
+const MyKue = stampit().deepConfiguration({
   Kue: myKueConf
 })
 ```
