@@ -150,6 +150,8 @@ const HasLog = stampit().props({
 
 You can chain all the shortcut functions \(see the full list above\).
 
+Below is just an example of what you can do. It is a utility stamp. If you compose it to any of your stamps then it will _count the number of object instances_ created from your stamp. Feel free to remove unwanted parts and use it.
+
 {% code-tabs %}
 {% code-tabs-item title="InstanceCounter.js" %}
 ```javascript
@@ -184,6 +186,4 @@ const InstanceCounter = stampit()
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
-The stamp above is a utility stamp. If you compose it to any of your stamps it will _count the number of object instances_ created from your stamp.
 
