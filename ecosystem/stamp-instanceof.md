@@ -8,6 +8,8 @@ const InstanceOf = require('@stamp/InstanceOf');
 import InstanceOf from '@stamp/InstanceOf';
 ```
 
+It uses the [well known Symbol hasInstance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/hasInstance) to test instance.
+
 ## Example
 
 Create a stamp:
