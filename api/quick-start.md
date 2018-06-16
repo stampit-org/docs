@@ -141,6 +141,8 @@ const catGifStore = CatGifStore.create()
 
 Here is the same `FileStore` stamp but written in a more concise way.
 
+{% code-tabs %}
+{% code-tabs-item title="S3FileStore.js" %}
 ```javascript
 const HasLog = require('./HasLog')
 const Privatize = require('@stamp/privatize')
@@ -171,6 +173,8 @@ const FileStore = HasLog.compose(Privatize, {
   }
 })
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## Mocking I/O in unit tests
 
@@ -195,5 +199,5 @@ const MockedFileStore = FileStore.props({
 
 ## Basic API
 
-Head to the [Basics](basics.md) page.
+Head to the [Basics](basics.md) page to understand what other API there are.
 
