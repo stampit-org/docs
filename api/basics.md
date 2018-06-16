@@ -167,7 +167,7 @@ const InstanceCounter = stampit()
     console.log('I am instance #', this.instanceIndex)
   } 
 })
-.init(function ({ foo }, { stamp }) {
+.init(function (_, { stamp }) {
   this.instanceIndex = stamp.compose.configuration.instanceCounter // instance number
   stamp.compose.configuration.instanceCounter += 1 // increment the counter
 })
