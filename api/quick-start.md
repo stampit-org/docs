@@ -34,22 +34,10 @@ Stamp = Stamp.props({ // creates a new derived stamp
 })
 ```
 
-Add a [method](methods.md).
-
-```javascript
-Stamp = Stamp.methods({ // creates a new derived stamp
-  upload({ fileName, stream }) {
-    this.log.info({ fileName }, 'Uploading file') // using the .log property composed in the beginning
-
-    return this.s3instance.upload({ Key: fileName, Body: stream }).promise() // using .s3instance, see below
-  }
-})
-```
-
 Add an [initializer](initializers.md) \(aka constructor\).
 
 ```javascript
-Stamp = Stamp.init(function ({ bucket }, { stamp }) {
+Stamp = Stamp.init(function ({ bucket }, { stamp }) { // creates a new derived stamp
   this.s3instance = new this.S3({ 
     apiVersion: '2006-03-01', 
     params: { Bucket: bucket || stamp.compose.configuration.bucket } // using configuration.bucket, see below
@@ -57,10 +45,22 @@ Stamp = Stamp.init(function ({ bucket }, { stamp }) {
 })
 ```
 
+Add a [method](methods.md).
+
+```javascript
+Stamp = Stamp.methods({ // creates a new derived stamp
+  upload({ fileName, stream }) {
+    this.log.info({ fileName }, 'Uploading file') // .log property from the HasLog stamp
+
+    return this.s3instance.upload({ Key: fileName, Body: stream }).promise() // see above
+  }
+})
+```
+
 Add a [configuration](configuration.md).
 
 ```javascript
-Stamp = Stamp.conf({
+Stamp = Stamp.conf({ // creates a new derived stamp
   bucket: process.env.UPLOAD_BUCKET
 })
 ```
@@ -68,7 +68,7 @@ Stamp = Stamp.conf({
 Add a [static](static-properties.md) method.
 
 ```javascript
-Stamp = Stamp.statics({
+Stamp = Stamp.statics({ // creates a new derived stamp
   setDefaultBucket(bucket) {
     return this.conf({ bucket })
   }
@@ -80,7 +80,7 @@ Make the `.s3instance` , `.log`, and `.S3` properties [private](../ecosystem/sta
 ```javascript
 const Privatize = require('@stamp/privatize')
 
-Stamp = Stamp.compose(Privatize)
+Stamp = Stamp.compose(Privatize) // creates a new derived stamp
 ```
 
 Give it a proper name.
@@ -92,7 +92,7 @@ const FileStore = Stamp
 Create objects from your stamp.
 
 ```javascript
-const myStore = FileStore()
+const store = FileStore()
 ```
 
 ### Shorter API
@@ -168,6 +168,14 @@ const SilentCatGifStore = CatGifStore.props({
 })
 
 await SilentCatGifStore().upload({ fileName: 'cat.gif', stream: readableStream })
+```
+
+Alternatively, you can have a generic silent logger stamp. Compose with it to override the `HasLog`.
+
+```javascript
+const HasSilentLog = stampit.props({ log: { info: () => {} } })
+
+const SilentCatGifStore = CatGifStore.compose(HasSilentLog)
 ```
 
 The `new` keyword also works with any stamp.
