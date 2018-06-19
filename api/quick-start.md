@@ -89,6 +89,51 @@ Give it a proper name.
 const FileStore = Stamp
 ```
 
+Create objects from your stamp.
+
+```javascript
+const myStore = FileStore()
+```
+
+### Shorter API
+
+Here is the same `FileStore` stamp but written in a more concise way.
+
+{% code-tabs %}
+{% code-tabs-item title="S3FileStore.js" %}
+```javascript
+const HasLog = require('./HasLog')
+const Privatize = require('@stamp/privatize')
+
+const FileStore = HasLog.compose(Privatize, {
+  props: {
+    S3: require('aws-sdk').S3
+  },
+  methods: {
+    upload({ fileName, stream }) {
+      this.log.info({ fileName }, 'Uploading file')
+      return this.s3instance.upload({ Key: fileName, Body: stream }).promise()
+    }
+  },
+  init({ bucket }, { stamp }) {
+    this.s3instance = new this.S3({ 
+      apiVersion: '2006-03-01', 
+      params: { Bucket: bucket || stamp.compose.configuration.bucket }
+    })
+  },
+  conf: {
+    bucket: process.env.UPLOAD_BUCKET
+  },
+  statics: {
+    setDefaultBucket(bucket) {
+      return this.conf({ bucket })
+    }
+  }
+})
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 ### Using the stamp
 
 Use your stamp ad-hoc.
@@ -136,45 +181,6 @@ Another way to create an object is to use `.create()` static method.
 ```javascript
 const catGifStore = CatGifStore.create()
 ```
-
-### Shorter API
-
-Here is the same `FileStore` stamp but written in a more concise way.
-
-{% code-tabs %}
-{% code-tabs-item title="S3FileStore.js" %}
-```javascript
-const HasLog = require('./HasLog')
-const Privatize = require('@stamp/privatize')
-
-const FileStore = HasLog.compose(Privatize, {
-  props: {
-    S3: require('aws-sdk').S3
-  },
-  methods: {
-    upload({ fileName, stream }) {
-      this.log.info({ fileName }, 'Uploading file')
-      return this.s3instance.upload({ Key: fileName, Body: stream }).promise()
-    }
-  },
-  init({ bucket }, { stamp }) {
-    this.s3instance = new this.S3({ 
-      apiVersion: '2006-03-01', 
-      params: { Bucket: bucket || stamp.compose.configuration.bucket }
-    })
-  },
-  conf: {
-    bucket: process.env.UPLOAD_BUCKET
-  },
-  statics: {
-    setDefaultBucket(bucket) {
-      return this.conf({ bucket })
-    }
-  }
-})
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ## Mocking I/O in unit tests
 
