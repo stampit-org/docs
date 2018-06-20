@@ -49,15 +49,15 @@ The initializers are concatenated into a deduplicated array. As the result, the 
 const {init} = stampit
 
 const Log1 = init(() => console.log(1))
-const Log2 = init(() => console.log(1))
-const Log3 = init(() => console.log(1))
+const Log2 = init(() => console.log(2))
+const Log3 = init(() => console.log(3))
 
 const MultiLog = stampit(Log1, Log2, Log3)
 
 MultiLog() // Will print three times:
 // 1
-// 1
-// 1
+// 2
+// 3
 
 // because there are 3 initializers
 MultiLog.compose.initializers.length === 3
