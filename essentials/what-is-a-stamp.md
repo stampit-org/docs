@@ -52,7 +52,7 @@ To understand if your object is a stamp you need to check its property `.compose
 
 ```javascript
 function isStamp (object) {
-  return typeof object === 'function' && object.compose === 'function'
+  return typeof object === 'function' && typeof object.compose === 'function'
 }
 ```
 
