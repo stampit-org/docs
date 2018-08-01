@@ -3,9 +3,9 @@
 _Enables_ `obj instanceof MyStamp` _in ES6 environments_
 
 ```javascript
-const InstanceOf = require('@stamp/InstanceOf');
+const InstanceOf = require('@stamp/instanceof');
 // or
-import InstanceOf from '@stamp/InstanceOf';
+import InstanceOf from '@stamp/instanceof';
 ```
 
 It uses the [well known Symbol hasInstance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/hasInstance) to test instance.
