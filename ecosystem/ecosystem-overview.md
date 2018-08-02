@@ -2,6 +2,8 @@
 
 ## Main modules
 
+Find the full list here: [https://www.npmjs.com/~stamp](https://www.npmjs.com/~stamp)
+
 * **@stamp/compose** - The standard compose function implementation to create stamps
 * **stampit** - A nice, handy API implementation of the compose standard. The original `stampit` module where it all began
 * **@stamp/it** - Same as above
