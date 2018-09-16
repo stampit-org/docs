@@ -27,6 +27,7 @@
 * [Composers](api/composers.md)
 * [Property descriptors](api/property-descriptors.md)
 * [Static property descriptors](api/static-property-descriptors.md)
+* [Name](api/name.md)
 
 ## Ecosystem
 
@@ -34,6 +35,6 @@
 * [@stamp/collision](ecosystem/stamp-collision.md)
 * [@stamp/required](ecosystem/stamp-required.md)
 * [@stamp/privatize](ecosystem/stamp-privatize.md)
-* [@stamp/named](ecosystem/stamp-named.md)
+* [@stamp/named \(DEPRECATED\)](ecosystem/stamp-named.md)
 * [@stamp/instanceof](ecosystem/stamp-instanceof.md)
 

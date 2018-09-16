@@ -1,6 +1,10 @@
-# @stamp/named
+# @stamp/named \(DEPRECATED\)
 
-## @stamp/named
+{% hint style="info" %}
+This stamp \(aka behaviour\) is built into the stampit since `stampit@4.2.0` and `@stamp/it@1.1`. 
+{% endhint %}
+
+## @stamp/named \(DEPRECATED\)
 
 _Changes the_ `Stamp.name` _property using the_ [_new ES6 feature_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name)_._
 

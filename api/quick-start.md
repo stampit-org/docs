@@ -86,7 +86,7 @@ Stamp = Stamp.compose(Privatize) // creates a new derived stamp
 Give it a proper name.
 
 ```javascript
-const FileStore = Stamp
+const FileStore = Stamp.compose({ name: 'FileStore' })
 ```
 
 Create objects from your stamp.
@@ -106,20 +106,21 @@ const HasLog = require('./HasLog')
 const Privatize = require('@stamp/privatize')
 
 const FileStore = HasLog.compose(Privatize, {
+  name: 'FileStore',
   props: {
     S3: require('aws-sdk').S3
-  },
-  methods: {
-    upload({ fileName, stream }) {
-      this.log.info({ fileName }, 'Uploading file')
-      return this.s3instance.upload({ Key: fileName, Body: stream }).promise()
-    }
   },
   init({ bucket }, { stamp }) {
     this.s3instance = new this.S3({ 
       apiVersion: '2006-03-01', 
       params: { Bucket: bucket || stamp.compose.configuration.bucket }
     })
+  },
+  methods: {
+    upload({ fileName, stream }) {
+      this.log.info({ fileName }, 'Uploading file')
+      return this.s3instance.upload({ Key: fileName, Body: stream }).promise()
+    }
   },
   conf: {
     bucket: process.env.UPLOAD_BUCKET
@@ -128,6 +129,21 @@ const FileStore = HasLog.compose(Privatize, {
     setDefaultBucket(bucket) {
       return this.conf({ bucket })
     }
+  }
+})
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+The reusable `HasLog` stamp can be implemented in the following way.
+
+{% code-tabs %}
+{% code-tabs-item title="HasLog.js" %}
+```javascript
+module.exports = require('@stamp/it')({
+  init(_, { stamp }) {
+    // this will reuse the stamp name "FileStore" we set above
+    this.log = require('bunyan').createLogger({ name: stamp.name })
   }
 })
 ```
@@ -213,5 +229,5 @@ const MockedFileStore = FileStore.props({
 
 ## Basic API
 
-Head to the [Basics](basics.md) page to understand what other API there are.
+Head to the [Basics](basics.md) page to about other API. However, by now you already know all you need.
 

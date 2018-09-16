@@ -17,7 +17,7 @@ Find the full list here: [https://www.npmjs.com/~stamp](https://www.npmjs.com/~s
 * **@stamp/fp-constructor** - Adds the Functional Programming capabilities to your stamps
 * **@stamp/init-property** - Replaces properties which reference stamps with objects created from the stamps
 * [**@stamp/instanceof**](stamp-instanceof.md) - Enables `obj instanceof MyStamp` in ES6 environments
-* [**@stamp/named**](stamp-named.md) - \(Re\)Name a stamp factory function
+* [**@stamp/named**](stamp-named.md) - \(Re\)Name a stamp factory function \(DEPRECATED\)
 * [**@stamp/privatize**](stamp-privatize.md) - Protect private properties
 * [**@stamp/required**](stamp-required.md) - Insist on a method/property/staticProperty/configuration presence
 * **@stamp/shortcut** - Adds handy shortcuts for stamp composition. Used in **@stamp/it**

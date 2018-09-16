@@ -24,7 +24,8 @@ const descriptor = {
   staticPropertyDescriptors: ...,
   composers: ...,
   configuration: ...,
-  deepConfiguration: ...
+  deepConfiguration: ...,
+  name: ...
 }
 
 const MyStamp = stampit(descriptor) // passing the descriptor
@@ -44,7 +45,8 @@ const shorterDescriptor = {
   staticPropertyDescriptors: ...,
   composers: ...,
   conf: ...,
-  deepConf: ...
+  deepConf: ...,
+  name: ...
 }
 
 const MyStamp = stampit(shorterDescriptor)
