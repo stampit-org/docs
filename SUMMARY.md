@@ -4,7 +4,6 @@
 
 ## Essentials
 
-* [Overview](essentials/overview.md)
 * [What is a Stamp](essentials/what-is-a-stamp.md)
 * [Installation](essentials/installation.md)
 * [Specification](essentials/specification/README.md)
