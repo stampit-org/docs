@@ -2,7 +2,7 @@
 
 ## Creating Stamps
 
-Stampit gives you several ways to create your stamps.
+Stampit gives you several ways to create your stamps \(aka factory functions\).
 
 > _**NOTE!**_
 >
