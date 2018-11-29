@@ -20,6 +20,7 @@ This metadata does not have a chaining method. This is illegal: `MyStamp.name("M
 
 ### **Gotchas**
 
+* This feature is not part of the `compose` [specification](../essentials/specification/).
 * Won’t work in ES5 environments \(like IE11\). The name will always be _“Stamp”_. Name of a function can be set only in &gt;=ES6 environments.
 * This code doesn’t work in JavaScript in general: `SmsGateway.name = “bla”`. Because `Function.name` is a special protected property.
 * If any of the stamps you compose have a name then all the derived stamps will have it too.
