@@ -229,5 +229,5 @@ const MockedFileStore = FileStore.props({
 
 ## Basic API
 
-Head to the [Basics](basics.md) page to about other API. However, by now you already know all you need.
+Head to the [Basics](basics.md) page to view more API documentation. However, by now you already know all you need.
 
