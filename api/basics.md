@@ -65,7 +65,7 @@ You can create stamps from them too.
 ```javascript
 const DefaultFoo = props({ foo: null })
 const PrintFoo = methods({ printFoo() { console.log(this.foo) } })
-const PassFoo = init({ foo }) { this.foo = foo })
+const PassFoo = init(funciton ({ foo }) { this.foo = foo })
 
 const Foo = DefaultFoo.compose(PrintFoo, PassFoo)
 ```
