@@ -96,7 +96,13 @@ const Circle = stampit(Point, {
   },
   methods: { // that goes to the prototype
     distance(point) {
-      return Point(point).distance(this) - this.radius;
+      // Shouldn't this only return a value if the point is located outside of the circle?
+      // Otherwise, we can end up with negative distances.
+      // This is assuming we want the distance between the point and the closest location on the circle.
+      // Proposed solution:
+      const distanceFromCenterpoint = Point(point).distance(this);
+      const finalDistance = (distanceFromCenterpoint > this.radius) ? distanceFromCenterpoint - this.radius:0;
+      return finalDistance;
     }
   }
 });
@@ -107,7 +113,8 @@ When creating instance of the `Circle` you will actually call **TWO** different 
 ```javascript
 // TWO different initializers will be executed here!!!
 const circle = Circle({ x: 12, y: 42, radius: 1.5 });
-circle.distance({ x: 12, y: 42 }) === 0.5;
+circle.distance({ x: 14, y: 42 }) === 0.5;
+// x had to be 14 here for the math to check out. 
 ```
 
 Now, declaring couple of additional stamps. We'll use them to enrich JavaScript drawable objects.
