@@ -31,7 +31,7 @@ const descriptor = {
 const MyStamp = stampit(descriptor) // passing the descriptor
 ```
 
-Or you can pass _sampit-flavoured_ descriptor \(shorter version of the standard descriptor\).
+Or you can pass _stampit-flavoured_ descriptor \(shorter version of the standard descriptor\).
 
 ```javascript
 const shorterDescriptor = {
