@@ -41,7 +41,7 @@ const shorterDescriptor = {
   propertyDescriptors: ...,
   init: ...,
   statics: ...,
-  staticDeepProps: ...,
+  deepStatics: ...,
   staticPropertyDescriptors: ...,
   composers: ...,
   conf: ...,
