@@ -2,7 +2,7 @@
 
 ## Browser usage
 
-For browsers it is recommended to use the [`stampit`](https://github.com/stampit-org/stampit) module. It's a small \(**1.3KB** gzipped\) and browser optimized. Also, it will work in other JavaScript environments and ES5-compatible engines.
+For browsers it is recommended to use the [`stampit`](https://github.com/stampit-org/stampit) module. It's a small \(**1.5KB** gzipped\) and browser optimized. Also, it will work in other JavaScript environments and ES5-compatible engines.
 
 ### NPM
 

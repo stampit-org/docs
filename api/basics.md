@@ -154,8 +154,7 @@ You can chain all the shortcut functions \(see the full list above\).
 
 Below is just an example of what you can do. It is a utility stamp. If you compose it to any of your stamps then it will _count the number of object instances_ created from your stamp. Feel free to remove unwanted parts.
 
-{% code-tabs %}
-{% code-tabs-item title="InstanceCounter.js" %}
+{% code title="InstanceCounter.js" %}
 ```javascript
 const InstanceCounter = stampit()
 .conf({
@@ -186,6 +185,5 @@ const InstanceCounter = stampit()
   stamp.compose.configuration.instanceCounter = 0
 })
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 

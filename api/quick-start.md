@@ -99,8 +99,7 @@ const store = FileStore()
 
 Here is the same `FileStore` stamp but written in a more concise way.
 
-{% code-tabs %}
-{% code-tabs-item title="S3FileStore.js" %}
+{% code title="S3FileStore.js" %}
 ```javascript
 const HasLog = require('./HasLog')
 const Privatize = require('@stamp/privatize')
@@ -132,13 +131,11 @@ const FileStore = HasLog.compose(Privatize, {
   }
 })
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 The reusable `HasLog` stamp can be implemented in the following way.
 
-{% code-tabs %}
-{% code-tabs-item title="HasLog.js" %}
+{% code title="HasLog.js" %}
 ```javascript
 module.exports = require('@stamp/it')({
   init(_, { stamp }) {
@@ -147,8 +144,7 @@ module.exports = require('@stamp/it')({
   }
 })
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### Using the stamp
 
