@@ -14,7 +14,7 @@ But if you still need to avoid name collision or protect a method from overwriti
 
 * The main advantage of ES6 is the [import/export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) syntax which enables easy [treeshaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking). But:
   * There is nothing to treeshake in `stampit` or `@stamp/it`.
-  * `stampit` is already 1.3KB gzipped.
+  * `stampit` is already 1.5KB gzipped.
 * Maintaining ES6-&gt;ES5 is quite hard in such a specific project.
 * Most projects still transpile from ESNext to ES5.
 
