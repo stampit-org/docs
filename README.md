@@ -107,7 +107,7 @@ When creating instance of the `Circle` you will actually call **TWO** different 
 ```javascript
 // TWO different initializers will be executed here!!!
 const circle = Circle({ x: 12, y: 42, radius: 1.5 });
-circle.distance({ x: 12, y: 42 }) === 0.5;
+circle.distance({ x: 14, y: 42 }) === 0.5;
 ```
 
 Now, declaring couple of additional stamps. We'll use them to enrich JavaScript drawable objects.

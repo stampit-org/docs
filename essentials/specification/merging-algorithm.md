@@ -39,7 +39,7 @@ See the [exact line](https://github.com/stampit-org/stamp-specification/blob/8a5
 
 The [stamp specification](./) standardized the deep merging algorithm to, basically, this:
 
-* Plain objects are \(recursively\) deep merged, including ES6 Symbol keys.
+* Plain objects are \(recursively\) deep merged, including ES6 Symbol keys, ES5 getters and setters.
 * **Arrays are concatenated**.
 * Functions, Symbols, RegExp, etc. values are copied by reference.
 * The last object type overwrites previous object type.
